@@ -2,3 +2,4 @@
 *.jpg
 VGG.pth
 torch-1.11.0+cu113-cp37-cp37m-win_amd64.whl
+*.pth
