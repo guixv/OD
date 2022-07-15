@@ -14,77 +14,10 @@ from utils.utils import Evaluation
 import argparse
 import numpy as np
 import os
+
+from VGG import vgg
+from Resnet import res
 import sys
-
-
-class VGG(nn.Module):
-    def __init__(self, features, num_classes, init_weights=True):
-        super(VGG, self).__init__()
-        self.features = features
-        self.avgpool = nn.AdaptiveAvgPool2d((7, 7))
-        self.classifier = nn.Sequential(
-            nn.Linear(512 * 7 * 7, 4096),
-            nn.ReLU(True),
-            nn.Dropout(),
-            nn.Linear(4096, 4096),
-            nn.ReLU(True),
-            nn.Dropout()
-        )
-        self.fc = nn.Linear(4096, num_classes)
-        if init_weights:
-            self._initialize_weights()
-
-    def forward(self, x):
-        x = self.features(x)
-        x = self.avgpool(x)
-        x = torch.flatten(x, 1)
-        x = self.classifier(x)
-        x = self.fc(x)
-        return x
-
-    def _initialize_weights(self):
-        for m in self.modules():
-            if isinstance(m, nn.Conv2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
-                if m.bias is not None:
-                    nn.init.constant_(m.bias, 0)
-            elif isinstance(m, nn.BatchNorm2d):
-                nn.init.constant_(m.weight, 1)
-                nn.init.constant_(m.bias, 0)
-            elif isinstance(m, nn.Linear):
-                nn.init.normal_(m.weight, 0, 0.01)
-                nn.init.constant_(m.bias, 0)
-
-
-cfgs = {
-    'vgg11': [64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
-    'vgg13': [64, 64, 'M', 128, 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
-    'vgg16': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512, 'M'],
-    'vgg19': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 256, 'M', 512, 512, 512, 512, 'M', 512, 512, 512, 512, 'M'],
-}
-
-
-def make_layers(cfg, batch_norm=False):
-    layers = []
-    in_channels = 3
-    for v in cfg:
-        if v == 'M':
-            layers += [nn.MaxPool2d(kernel_size=2, stride=2)]
-        else:
-            conv2d = nn.Conv2d(in_channels, v, kernel_size=3, padding=1)
-            if batch_norm:
-                layers += [conv2d, nn.BatchNorm2d(v), nn.ReLU(inplace=True)]
-            else:
-                layers += [conv2d, nn.ReLU(inplace=True)]
-            in_channels = v
-    return nn.Sequential(*layers)
-
-
-def vgg(model_name="vgg13", **kwargs):
-    assert model_name in cfgs, "Warning: model number {} not in cfgs dict!".format(model_name)
-    cfg = cfgs[model_name]
-    model = VGG(make_layers(cfg, batch_norm=False), **kwargs)
-    return model
 
 
 def train_epoch(epoch, model, traindata, criterion, optimizer, device):
@@ -103,7 +36,7 @@ def train_epoch(epoch, model, traindata, criterion, optimizer, device):
         losses += loss.item()
         optimizer.step()  # 更新参数
 
-        pre_ = np.argmax(output.detach().cpu().numpy(), axis=1)
+        pre_ = torch.argmax(output, 1)
         true.extend(label.tolist())
         pre.extend(pre_.tolist())
     Loss = losses / len(traindata)
@@ -120,16 +53,17 @@ def test_epoch(epoch, model, testdata, criterion, device):
     pre = []
     losses = 0
 
-    for image, label in tqdm(testdata):
-        image, label = Variable(image.float()).to(device), Variable(label).to(device)
+    with torch.no_grad():
+        for image, label in tqdm(testdata):
+            image, label = Variable(image.float()).to(device), Variable(label).to(device)
 
-        output = model(image)
-        pre_ = np.argmax(output.detach().cpu().numpy(), axis=1)
-        true.extend(label.tolist())
-        pre.extend(pre_.tolist())
-        loss = criterion(output, label)
-        losses += loss.item()
-    Loss = losses / len(testdata)
+            output = model(image)
+            loss = criterion(output, label)
+            pre_ = torch.argmax(output, 1)
+            true.extend(label.tolist())
+            pre.extend(pre_.tolist())
+            losses += loss.item()
+        Loss = losses / len(testdata)
 
     Accuracy, Precision, Recall, F1Score = Evaluation(pre, true)
     print("Test  Epoch({}): Acc:{} Prec:{} Recall:{} F1-score:{} Loss:{}".format(epoch, Accuracy, Precision, Recall,
@@ -157,7 +91,7 @@ def train(opt, device):
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
         "test": transforms.Compose([
-            transforms.Resize(120),
+            transforms.Resize((120, 120)),
             transforms.CenterCrop(input_size),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -168,15 +102,15 @@ def train(opt, device):
 
     traindata = DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True,
                            num_workers=0)  # 将训练数据以每次n张图片的形式抽出进行训练
-    testdata = DataLoader(dataset=test_data, batch_size=batch_size, shuffle=False, num_workers=0,
-                          pin_memory=True)  # 将训练数据以每次n张图片的形式抽出进行测试
+    testdata = DataLoader(dataset=test_data, batch_size=batch_size // 2, shuffle=True,
+                          num_workers=0)  # 将训练数据以每次n张图片的形式抽出进行测试
 
     train_size = len(train_data)  # 训练集的长度
     test_size = len(test_data)  # 测试集的长度
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
-    model = vgg(num_classes=class_num).to(device)
+    model = res(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -239,9 +173,9 @@ def train(opt, device):
     # 下面的是画图过程，将上述存放的列表  画出来即可
     plt.figure(figsize=(12, 4))
     plt.subplot(1, 2, 1)
-    plt.plot(range(epoch), train_loss,
+    plt.plot(range(epoch-1), train_loss,
              "ro-", label="Train loss")
-    plt.plot(range(epoch), test_loss,
+    plt.plot(range(epoch-1), test_loss,
              "bs-", label="test loss")
     plt.legend()
     plt.xlabel("epoch")
@@ -260,16 +194,16 @@ def train(opt, device):
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=2)
+    parse.add_argument("--batch_size", type=int, default=64)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
-    parse.add_argument("--epoch", type=int, default=50)
+    parse.add_argument("--epoch", type=int, default=100)
     parse.add_argument("--weight", type=str, default='')
-    parse.add_argument("--log_eval", type=str, default="output/vgg/log_val.txt")
+    parse.add_argument("--log_eval", type=str, default="output/Res/log_val.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/vgg/")
+    parse.add_argument("--output_path", type=str, default="output/Res/")
 
     opt = parse.parse_args()
 
