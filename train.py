@@ -91,7 +91,7 @@ def train(opt, device):
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
         "test": transforms.Compose([
-            transforms.Resize((120, 120)),
+            transforms.Resize((input_size, input_size)),
             transforms.CenterCrop(input_size),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -110,7 +110,7 @@ def train(opt, device):
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
-    model = res(num_classes=class_num).to(device)
+    model = vgg(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -121,6 +121,10 @@ def train(opt, device):
     log_eval_path = opt.log_eval
     if os.path.exists(log_eval_path):  # 如果log_eval.txt在存储之前存在则删除，防止后续内容冲突
         os.remove(log_eval_path)
+
+    log_list_path = opt.log_list
+    if os.path.exists(log_list_path):  # 如果log_eval.txt在存储之前存在则删除，防止后续内容冲突
+        os.remove(log_list_path)
 
     item_list = train_data.class_to_idx  # 获取类别名称以及对应的索引
     cla_dict = dict((val, key) for key, val in item_list.items())  # 将上面的键值对位置对调一下
@@ -135,6 +139,8 @@ def train(opt, device):
     test_accur = []  # 存放测试集准确率的数组
     best_accur = 0.0  # 最高准确度
 
+    with open(log_list_path, "a") as fp:
+        fp.write("epoch,train_accur,test_accur,,train_loss,test_loss\n")
     for epoch in range(epoch):
         train_eval = train_epoch(epoch, model, traindata, criterion, optimizer, device)
         test_eval = test_epoch(epoch, model, testdata, criterion, device)
@@ -170,12 +176,17 @@ def train(opt, device):
                                                                                               test_eval[3],
                                                                                               test_eval[4]))
             fp.write("Best Acc(Test):{}\n".format(best_accur))
+
+        with open(log_list_path, "a") as fp:
+            fp.write("{},{},{},,{},{}\n".format(epoch, train_eval[0], test_eval[0], train_eval[4], test_eval[4]))
     # 下面的是画图过程，将上述存放的列表  画出来即可
+    print(range(epoch))
+    print(train_loss)
     plt.figure(figsize=(12, 4))
     plt.subplot(1, 2, 1)
-    plt.plot(range(epoch-1), train_loss,
+    plt.plot(range(epoch), train_loss,
              "ro-", label="Train loss")
-    plt.plot(range(epoch-1), test_loss,
+    plt.plot(range(epoch), test_loss,
              "bs-", label="test loss")
     plt.legend()
     plt.xlabel("epoch")
@@ -197,9 +208,10 @@ def main():
     parse.add_argument("--batch_size", type=int, default=64)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
-    parse.add_argument("--epoch", type=int, default=100)
+    parse.add_argument("--epoch", type=int, default=2)
     parse.add_argument("--weight", type=str, default='')
     parse.add_argument("--log_eval", type=str, default="output/Res/log_val.txt")
+    parse.add_argument("--log_list", type=str, default="output/Res/log_list.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
