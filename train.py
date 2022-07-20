@@ -17,6 +17,7 @@ import os
 
 from VGG import vgg
 from Resnet import res
+from densenet import dense
 import sys
 
 
@@ -110,7 +111,7 @@ def train(opt, device):
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
-    model = vgg(num_classes=class_num).to(device)
+    model = res(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -180,42 +181,42 @@ def train(opt, device):
         with open(log_list_path, "a") as fp:
             fp.write("{},{},{},,{},{}\n".format(epoch, train_eval[0], test_eval[0], train_eval[4], test_eval[4]))
     # 下面的是画图过程，将上述存放的列表  画出来即可
-    print(range(epoch))
+    print(range(epoch+1))
     print(train_loss)
     plt.figure(figsize=(12, 4))
     plt.subplot(1, 2, 1)
-    plt.plot(range(epoch), train_loss,
+    plt.plot(range(epoch+1), train_loss,
              "ro-", label="Train loss")
-    plt.plot(range(epoch), test_loss,
+    plt.plot(range(epoch+1), test_loss,
              "bs-", label="test loss")
     plt.legend()
     plt.xlabel("epoch")
     plt.ylabel("Loss")
     plt.subplot(1, 2, 2)
-    plt.plot(range(epoch), train_accur,
+    plt.plot(range(epoch+1), train_accur,
              "ro-", label="Train accur")
-    plt.plot(range(epoch), test_accur,
+    plt.plot(range(epoch+1), test_accur,
              "bs-", label="test accur")
     plt.xlabel("epoch")
     plt.ylabel("acc")
     plt.legend()
+    plt.savefig(output_path+'val.png')
     plt.show()
-    plt.imsave('output/val.png')
 
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=64)
+    parse.add_argument("--batch_size", type=int, default=32)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
-    parse.add_argument("--epoch", type=int, default=2)
+    parse.add_argument("--epoch", type=int, default=50)
     parse.add_argument("--weight", type=str, default='')
-    parse.add_argument("--log_eval", type=str, default="output/Res/log_val.txt")
-    parse.add_argument("--log_list", type=str, default="output/Res/log_list.txt")
+    parse.add_argument("--log_eval", type=str, default="output/Res101/log_val.txt")
+    parse.add_argument("--log_list", type=str, default="output/Res101/log_list.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/Res/")
+    parse.add_argument("--output_path", type=str, default="output/Res101/")
 
     opt = parse.parse_args()
 
