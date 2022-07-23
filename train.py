@@ -18,6 +18,7 @@ import os
 from VGG import vgg
 from Resnet import res
 from densenet import dense
+from Res2Net import res2
 import sys
 
 
@@ -111,7 +112,7 @@ def train(opt, device):
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
-    model = res(num_classes=class_num).to(device)
+    model = res2(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -206,17 +207,17 @@ def train(opt, device):
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=32)
+    parse.add_argument("--batch_size", type=int, default=64)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
     parse.add_argument("--epoch", type=int, default=50)
     parse.add_argument("--weight", type=str, default='')
-    parse.add_argument("--log_eval", type=str, default="output/Res101/log_val.txt")
-    parse.add_argument("--log_list", type=str, default="output/Res101/log_list.txt")
+    parse.add_argument("--log_eval", type=str, default="output/Res2/log_val.txt")
+    parse.add_argument("--log_list", type=str, default="output/Res2/log_list.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/Res101/")
+    parse.add_argument("--output_path", type=str, default="output/Res2/")
 
     opt = parse.parse_args()
 
