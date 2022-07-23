@@ -109,7 +109,7 @@ cfgs = {
 }
 
 
-def res(model_name="resnet101", num_classes=5, **kwargs):
+def res(model_name="resnet50", num_classes=5, **kwargs):
     assert model_name in cfgs, "Warning: model number {} not in cfgs dict!".format(model_name)
     cfg = cfgs[model_name]
     model = ResNet(Bottleneck, cfg, num_classes, **kwargs)
