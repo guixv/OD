@@ -1,1 +1,0 @@
-epoch,train_accur,test_accur,,train_loss,test_loss
