@@ -112,7 +112,7 @@ def train(opt, device):
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
-    model = res2(num_classes=class_num).to(device)
+    model = dense(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -207,7 +207,7 @@ def train(opt, device):
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=64)
+    parse.add_argument("--batch_size", type=int, default=32)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
     parse.add_argument("--epoch", type=int, default=50)

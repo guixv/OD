@@ -98,7 +98,7 @@ class DenseNet(nn.Module):
         feature_num = feature_num + grow_rate * block[3]
         # print(feature_num)
 
-        self.avgpool = nn.AdaptiveAvgPool2d((1,1))
+        self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         # feature_num = feature_num // 7
         # print(feature_num)
         self.fc = nn.Linear(feature_num, num_classes)
@@ -124,7 +124,7 @@ cfgs = {
 }
 
 
-def dense(model_name="DenseNet121", num_classes=5, **kwargs):
+def dense(model_name="DenseNet169", num_classes=5, **kwargs):
     assert model_name in cfgs, "Warning: model number {} not in cfgs dict!".format(model_name)
     cfg = cfgs[model_name]
     model = DenseNet(block=cfg, num_classes=num_classes, **kwargs)
