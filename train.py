@@ -220,12 +220,12 @@ def main():
     parse.add_argument("--input_size", type=int, default=120)
     parse.add_argument("--epoch", type=int, default=50)
     parse.add_argument("--weight", type=str, default='')
-    parse.add_argument("--log_eval", type=str, default="output/Res2/log_val.txt")
-    parse.add_argument("--log_list", type=str, default="output/Res2/log_list.txt")
+    parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
+    parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/Res2/")
+    parse.add_argument("--output_path", type=str, default="output/ViT/")
 
     opt = parse.parse_args()
 
