@@ -1,5 +1,6 @@
 import json
 
+import math
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -8,6 +9,7 @@ import torchvision.transforms as transforms
 from matplotlib import pyplot as plt
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
+import torch.optim.lr_scheduler as lr_scheduler
 from tqdm import tqdm
 
 from utils.utils import Evaluation
@@ -22,7 +24,7 @@ from Res2Net import res2
 import sys
 
 
-def train_epoch(epoch, model, traindata, criterion, optimizer, device):
+def train_epoch(epoch, model, traindata, criterion, optimizer,scheduler, device):
     model.train()
     true = []
     pre = []
@@ -37,6 +39,7 @@ def train_epoch(epoch, model, traindata, criterion, optimizer, device):
         loss.backward()  # 反向求解梯度
         losses += loss.item()
         optimizer.step()  # 更新参数
+        scheduler.step()  #更新学习率
 
         pre_ = torch.argmax(output, 1)
         true.extend(label.tolist())
@@ -83,6 +86,7 @@ def train(opt, device):
     train_path = opt.train_path
     test_path = opt.val_path
     weight = opt.weight
+    lrf = opt.lrf
     class_num = opt.class_num
 
     data_transform = {
@@ -115,7 +119,10 @@ def train(opt, device):
     model = dense(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
-    optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
+    optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)#优化器
+
+    lf = lambda x: ((1 + math.cos(x * math.pi / epoch)) / 2) * (1 - lrf) + lrf  # cosine
+    scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  #学习率变化
 
     output_path = opt.output_path
     if os.path.exists(output_path) is not True:
@@ -144,7 +151,7 @@ def train(opt, device):
     with open(log_list_path, "a") as fp:
         fp.write("epoch,train_accur,test_accur,,train_loss,test_loss\n")
     for epoch in range(epoch):
-        train_eval = train_epoch(epoch, model, traindata, criterion, optimizer, device)
+        train_eval = train_epoch(epoch, model, traindata, criterion, optimizer,scheduler, device)
         test_eval = test_epoch(epoch, model, testdata, criterion, device)
 
         # 画出eval的折线图利用plot
@@ -209,6 +216,7 @@ def main():
     parse = argparse.ArgumentParser(description="classification")
     parse.add_argument("--batch_size", type=int, default=32)
     parse.add_argument("--lr", type=int, default=0.001)
+    parse.add_argument("--lrf", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
     parse.add_argument("--epoch", type=int, default=50)
     parse.add_argument("--weight", type=str, default='')
