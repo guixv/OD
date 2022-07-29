@@ -81,9 +81,57 @@ class Attention(nn.Module):
         # [batch_size, num_heads, num_patches + 1, embed_dim_per_head]
         x = x.transpose(1, 2)
         # transpose: [batch_size, num_patches + 1, num_heads, embed_dim_per_head]
-        x=x.reshape(B,N,C)
-        x=self.feature(x)
-        x=self.attenDrop(x)
+        x = x.reshape(B, N, C)
+        x = self.feature(x)
+        x = self.attenDrop(x)
         return x
 
 
+class Mlp(nn.Module):
+    def __init__(self, in_channel, hidden_channel, out_channel=None, active_layer=nn.GELU, drop_pro=0.):
+        super(Mlp, self).__init__()
+        out_channel = in_channel or out_channel
+        hidden_channel = in_channel or hidden_channel
+        self.fc1 = nn.Linear(in_features=in_channel, out_features=hidden_channel)
+        self.act = active_layer()
+        self.fc2 = nn.Linear(in_features=hidden_channel, out_features=out_channel)
+        self.dropout = nn.Dropout(drop_pro)
+
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.act(x)
+        x = self.dropout(x)
+        x = self.fc2(x)
+        x = self.dropout(x)
+
+        return x
+
+
+class Block(nn.Module):
+    def __init__(self, dim, num_heads, qkv_bias=False, qk_scale=None, atten_drop_rate=0.,
+                 feature_drop_rate=0., path_drop_prob=0., mlp_ratio=4.):
+        super(Block, self).__init__()
+        self.norm1 = nn.LayerNorm(dim)
+        self.atten = Attention(dim=dim, num_heads=num_heads, qkv_bias=qkv_bias, qk_scale=qk_scale,
+                               atten_drop_rate=atten_drop_rate, feature_dop_rate=feature_drop_rate)
+        self.drop_path = DropPath(drop_prob=path_drop_prob)
+        self.norm2 = nn.LayerNorm(dim)
+        mlp_hidden_dim = dim * mlp_ratio
+        self.mlp = Mlp(in_channel=dim, hidden_channel=mlp_hidden_dim, out_channel=dim, active_layer=nn.GELU,
+                       drop_pro=feature_drop_rate)
+
+    def forward(self, x):
+        x = self.norm1(x)
+        x = self.atten(x)
+        x = x + self.drop_path(x)
+
+        x = self.norm2(x)
+        x = self.mlp(x)
+        x = x + self.drop_path(x)
+
+        return x
+
+
+class ViT(nn.Module):
+    def __init__(self):
+        super(ViT, self).__init__()
