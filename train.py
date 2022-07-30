@@ -20,11 +20,13 @@ import os
 from VGG import vgg
 from Resnet import res
 from densenet import dense
+from ViT import vit16
 from Res2Net import res2
+from vit_model import vit_base_patch16_224 as create_model
 import sys
 
 
-def train_epoch(epoch, model, traindata, criterion, optimizer,scheduler, device):
+def train_epoch(epoch, model, traindata, criterion, optimizer, device):
     model.train()
     true = []
     pre = []
@@ -34,12 +36,14 @@ def train_epoch(epoch, model, traindata, criterion, optimizer,scheduler, device)
 
         optimizer.zero_grad()  # 初始化梯度值
         output = model(image)
+        # print(output)
+        # print(label)
 
         loss = criterion(output, label)
         loss.backward()  # 反向求解梯度
         losses += loss.item()
         optimizer.step()  # 更新参数
-        scheduler.step()  #更新学习率
+        # scheduler.step()  #更新学习率
 
         pre_ = torch.argmax(output, 1)
         true.extend(label.tolist())
@@ -116,22 +120,22 @@ def train(opt, device):
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
-    model = dense(num_classes=class_num).to(device)
+    model = create_model(num_classes=class_num).to(device)
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)#优化器
 
-    lf = lambda x: ((1 + math.cos(x * math.pi / epoch)) / 2) * (1 - lrf) + lrf  # cosine
-    scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  #学习率变化
+    # lf = lambda x: ((1 + math.cos(x * math.pi / (epoch+1))) / 2) * (1 - lrf) + lrf  # cosine
+    # scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  #学习率变化
 
     output_path = opt.output_path
     if os.path.exists(output_path) is not True:
         os.makedirs(output_path)
-    log_eval_path = opt.log_eval
+    log_eval_path = opt.output_path + "/log_eval.txt"
     if os.path.exists(log_eval_path):  # 如果log_eval.txt在存储之前存在则删除，防止后续内容冲突
         os.remove(log_eval_path)
 
-    log_list_path = opt.log_list
+    log_list_path = opt.output_path + "/log_list.txt"
     if os.path.exists(log_list_path):  # 如果log_eval.txt在存储之前存在则删除，防止后续内容冲突
         os.remove(log_list_path)
 
@@ -151,7 +155,7 @@ def train(opt, device):
     with open(log_list_path, "a") as fp:
         fp.write("epoch,train_accur,test_accur,,train_loss,test_loss\n")
     for epoch in range(epoch):
-        train_eval = train_epoch(epoch, model, traindata, criterion, optimizer,scheduler, device)
+        train_eval = train_epoch(epoch, model, traindata, criterion, optimizer,device)
         test_eval = test_epoch(epoch, model, testdata, criterion, device)
 
         # 画出eval的折线图利用plot
@@ -218,14 +222,14 @@ def main():
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--lrf", type=int, default=0.001)
     parse.add_argument("--input_size", type=int, default=120)
-    parse.add_argument("--epoch", type=int, default=50)
+    parse.add_argument("--epoch", type=int, default=25)
     parse.add_argument("--weight", type=str, default='')
-    parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
-    parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
+    # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
+    # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/ViT/")
+    parse.add_argument("--output_path", type=str, default="output/ViT_model/")
 
     opt = parse.parse_args()
 
