@@ -30,10 +30,10 @@ class PatchEmbedding(nn.Module):
         super(PatchEmbedding, self).__init__()
         self.img_size = (img_size, img_size)
         self.patch_size = (patch_size, patch_size)
-        self.num_patch = (img_size // patch_size) * (img_size * patch_size)
+        self.num_patch = (img_size // patch_size) * (img_size // patch_size)
         self.feature = nn.Conv2d(in_channels=in_channel, out_channels=embed_size, kernel_size=self.patch_size,
                                  stride=self.patch_size)
-        self.norm = norm_layer
+        self.norm = norm_layer(normalized_shape=embed_size)
 
     def forward(self, x):
         B, C, H, W = x.shape
@@ -55,10 +55,10 @@ class Attention(nn.Module):
         self.num_heads = num_heads
         head_dim = dim / num_heads
         self.scale = qk_scale or head_dim ** -0.5
-        self.qkv = nn.Linear(dim, dim * 3, bias=False)
+        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)
         self.attenDrop = nn.Dropout(atten_drop_rate)
-        self.featureDrop = nn.Dropout(feature_dop_rate)
         self.feature = nn.Linear(dim, dim)
+        self.featureDrop = nn.Dropout(feature_dop_rate)
 
     def forward(self, x):
         # [batch_size, num_patches + 1, total_embed_dim]
@@ -83,15 +83,15 @@ class Attention(nn.Module):
         # transpose: [batch_size, num_patches + 1, num_heads, embed_dim_per_head]
         x = x.reshape(B, N, C)
         x = self.feature(x)
-        x = self.attenDrop(x)
+        x = self.featureDrop(x)
         return x
 
 
 class Mlp(nn.Module):
-    def __init__(self, in_channel, hidden_channel, out_channel=None, active_layer=nn.GELU, drop_pro=0.):
+    def __init__(self, in_channel, hidden_channel=None, out_channel=None, active_layer=nn.GELU, drop_pro=0.):
         super(Mlp, self).__init__()
-        out_channel = in_channel or out_channel
-        hidden_channel = in_channel or hidden_channel
+        out_channel = out_channel or in_channel
+        hidden_channel = hidden_channel or in_channel
         self.fc1 = nn.Linear(in_features=in_channel, out_features=hidden_channel)
         self.act = active_layer()
         self.fc2 = nn.Linear(in_features=hidden_channel, out_features=out_channel)
@@ -116,7 +116,7 @@ class Block(nn.Module):
                                atten_drop_rate=atten_drop_rate, feature_dop_rate=feature_drop_rate)
         self.drop_path = DropPath(drop_prob=path_drop_prob)
         self.norm2 = nn.LayerNorm(dim)
-        mlp_hidden_dim = dim * mlp_ratio
+        mlp_hidden_dim = int(dim * mlp_ratio)
         self.mlp = Mlp(in_channel=dim, hidden_channel=mlp_hidden_dim, out_channel=dim, active_layer=nn.GELU,
                        drop_pro=feature_drop_rate)
 
@@ -133,5 +133,70 @@ class Block(nn.Module):
 
 
 class ViT(nn.Module):
-    def __init__(self):
+    def __init__(self, img_size=120, patch_size=16, in_channel=3,
+                 embed_size=768, norm_layer=nn.LayerNorm,
+                 drop_prob=0., depth=12, num_heads=12, qkc_bias=True,
+                 qk_scale=None, atten_drop_rate=0., feature_drop_rate=0.,
+                 path_drop_prob=0., mlp_ratio=4.0, num_classes=10, init_weights=True):
         super(ViT, self).__init__()
+        self.patch_embedding = PatchEmbedding(img_size=img_size,
+                                              patch_size=patch_size,
+                                              in_channel=in_channel,
+                                              embed_size=embed_size,
+                                              norm_layer=norm_layer)
+        num_patches = self.patch_embedding.num_patch
+        self.num_feature = self.embed_size = embed_size
+        self.class_token = nn.Parameter(torch.zeros(1, 1, embed_size))
+        self.position_embedding = nn.Parameter(torch.zeros(1, num_patches + 1, embed_size))
+        self.drop_out1 = nn.Dropout(drop_prob)
+        self.pre_logits = nn.Identity()
+        self.transformer_encoder = nn.Sequential(*[
+            Block(dim=embed_size, num_heads=num_heads, qkv_bias=qkc_bias,
+                  qk_scale=qk_scale, atten_drop_rate=atten_drop_rate, feature_drop_rate=feature_drop_rate,
+                  path_drop_prob=path_drop_prob, mlp_ratio=mlp_ratio)
+            for i in range(depth)
+        ])
+        self.norm1 = norm_layer(normalized_shape=embed_size)
+        self.head = nn.Linear(in_features=self.num_feature, out_features=num_classes)
+
+        if init_weights:
+            self._initialize_weights()
+
+    def _initialize_weights(self):
+        nn.init.trunc_normal_(self.position_embedding, std=0.02)
+        nn.init.trunc_normal_(self.class_token, std=0.02)
+
+        for m in self.modules():
+            if isinstance(m, nn.Conv2d):
+                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                if m.bias is not None:
+                    nn.init.constant_(m.bias, 0)
+            elif isinstance(m, nn.BatchNorm2d):
+                nn.init.constant_(m.weight, 1)
+                nn.init.constant_(m.bias, 0)
+            elif isinstance(m, nn.Linear):
+                nn.init.normal_(m.weight, 0, 0.01)
+                nn.init.constant_(m.bias, 0)
+
+    def forward(self, x):
+        x = self.patch_embedding(x)
+        # print(x.shape)
+        class_token = self.class_token.expand(x.shape[0], -1, -1)
+        x = torch.cat((class_token, x), dim=1)
+        # print(x.shape)
+        position_embedding = self.position_embedding
+        # print(position_embedding.shape)
+        x = x + position_embedding
+        x = self.drop_out1(x)
+        x = self.transformer_encoder(x)
+        x = self.norm1(x)
+        x = self.pre_logits(x[:, 0])
+        x = self.head(x)
+
+        return x
+
+
+def vit16(num_classes=10):
+    module = ViT(img_size=120, patch_size=16, embed_size=768, depth=12, num_heads=12, num_classes=num_classes)
+    print(module)
+    return module
