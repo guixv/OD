@@ -114,7 +114,7 @@ class Block(nn.Module):
         self.norm1 = nn.LayerNorm(dim)
         self.atten = Attention(dim=dim, num_heads=num_heads, qkv_bias=qkv_bias, qk_scale=qk_scale,
                                atten_drop_rate=atten_drop_rate, feature_dop_rate=feature_drop_rate)
-        self.drop_path = DropPath(drop_prob=path_drop_prob)
+        self.drop_path = DropPath(drop_prob=path_drop_prob) if path_drop_prob > 0. else nn.Identity()
         self.norm2 = nn.LayerNorm(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
         self.mlp = Mlp(in_channel=dim, hidden_channel=mlp_hidden_dim, out_channel=dim, active_layer=nn.GELU,
@@ -149,7 +149,7 @@ class ViT(nn.Module):
         self.class_token = nn.Parameter(torch.zeros(1, 1, embed_size))
         self.position_embedding = nn.Parameter(torch.zeros(1, num_patches + 1, embed_size))
         self.drop_out1 = nn.Dropout(drop_prob)
-        self.pre_logits = nn.Identity()
+        self.pre_logic = nn.Identity()
         self.transformer_encoder = nn.Sequential(*[
             Block(dim=embed_size, num_heads=num_heads, qkv_bias=qkc_bias,
                   qk_scale=qk_scale, atten_drop_rate=atten_drop_rate, feature_drop_rate=feature_drop_rate,
@@ -171,12 +171,15 @@ class ViT(nn.Module):
                 nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0)
-            elif isinstance(m, nn.BatchNorm2d):
-                nn.init.constant_(m.weight, 1)
-                nn.init.constant_(m.bias, 0)
+            # elif isinstance(m, nn.BatchNorm2d):
+            #     nn.init.constant_(m.weight, 1)
+            #     nn.init.constant_(m.bias, 0)
             elif isinstance(m, nn.Linear):
                 nn.init.normal_(m.weight, 0, 0.01)
                 nn.init.constant_(m.bias, 0)
+            elif isinstance(m, nn.LayerNorm):
+                nn.init.zeros_(m.bias)
+                nn.init.ones_(m.weight)
 
     def forward(self, x):
         x = self.patch_embedding(x)
@@ -190,13 +193,16 @@ class ViT(nn.Module):
         x = self.drop_out1(x)
         x = self.transformer_encoder(x)
         x = self.norm1(x)
-        x = self.pre_logits(x[:, 0])
+        x = self.pre_logic(x[:, 0])
         x = self.head(x)
 
         return x
 
 
 def vit16(num_classes=10):
-    module = ViT(img_size=120, patch_size=16, embed_size=768, depth=12, num_heads=12, num_classes=num_classes)
-    print(module)
+    module = ViT(img_size=120, patch_size=16, embed_size=768,
+                 depth=12, num_heads=12, num_classes=num_classes,
+                 drop_prob=0.01, path_drop_prob=0.01
+                 )
+    # print(module)
     return module
