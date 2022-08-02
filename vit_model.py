@@ -54,7 +54,7 @@ class PatchEmbed(nn.Module):
         self.num_patches = self.grid_size[0] * self.grid_size[1]
 
         self.proj = nn.Conv2d(in_c, embed_dim, kernel_size=patch_size, stride=patch_size)
-        self.norm = norm_layer(embed_dim) if norm_layer else nn.Identity()
+        self.norm = norm_layer(embed_dim)
 
     def forward(self, x):
         B, C, H, W = x.shape
@@ -212,16 +212,8 @@ class VisionTransformer(nn.Module):
         self.norm = norm_layer(embed_dim)
 
         # Representation layer
-        if representation_size and not distilled:
-            self.has_logits = True
-            self.num_features = representation_size
-            self.pre_logits = nn.Sequential(OrderedDict([
-                ("fc", nn.Linear(embed_dim, representation_size)),
-                ("act", nn.Tanh())
-            ]))
-        else:
-            self.has_logits = False
-            self.pre_logits = nn.Identity()
+        self.has_logits = False
+        self.pre_logits = nn.Identity()
 
         # Classifier head(s)
         self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
