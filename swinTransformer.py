@@ -70,6 +70,15 @@ class PatchEmbed(nn.Module):
         return x, H, W
 
 
+def window_partition(x, window_size):
+    B, H, W, C = x.shape
+    x = x.view(B, H // window_size, window_size, W // window_size, window_size, C)
+    x = x.permute(0, 1, 3, 2, 4)
+    x = x.contiguous()
+    x = x.view(-1, window_size, window_size, C)
+    return x
+
+
 class SwinTransformer(nn.Module):
     def __init__(self, in_channel=3, patch_size=4,
                  window_size=7, embed_dim=128,
