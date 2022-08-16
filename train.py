@@ -21,6 +21,7 @@ from VGG import vgg
 from Resnet import res
 from densenet import dense
 from ViT import vit16
+from swinTransformer import swin_transformer
 from Res2Net import res2
 from vit_model import vit_base_patch16_224 as create_model
 import sys
@@ -117,7 +118,7 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = vit16(num_classes=class_num).to(device)
+    model = swin_transformer(num_classes=class_num).to(device)
     # if weight != "":
     #     assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
     #     weights_dict = torch.load(weight, map_location=device)
@@ -233,7 +234,7 @@ def train(opt, device):
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=64)
+    parse.add_argument("--batch_size", type=int, default=16)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--lrf", type=int, default=0.01)
     parse.add_argument("--input_size", type=int, default=120)
@@ -244,7 +245,7 @@ def main():
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
     parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/ViT_mk5/")
+    parse.add_argument("--output_path", type=str, default="output/swin1/")
 
     opt = parse.parse_args()
 
