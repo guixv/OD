@@ -21,6 +21,7 @@ from VGG import vgg
 from Resnet import res
 from densenet import dense
 from ViT import vit16
+from swinmodel import swin_base_patch4_window7_224
 from swinTransformer import swin_transformer
 from Res2Net import res2
 from vit_model import vit_base_patch16_224 as create_model
@@ -118,7 +119,15 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = swin_transformer(num_classes=class_num).to(device)
+    model = swin_base_patch4_window7_224(num_classes=class_num).to(device)
+    if weight != "":
+        assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
+        weights_dict = torch.load(weight, map_location=device)["model"]
+        # 删除有关分类类别的权重
+        for k in list(weights_dict.keys()):
+            if "head" in k:
+                del weights_dict[k]
+        print(model.load_state_dict(weights_dict, strict=False))
     # if weight != "":
     #     assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
     #     weights_dict = torch.load(weight, map_location=device)
@@ -234,10 +243,10 @@ def train(opt, device):
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=16)
+    parse.add_argument("--batch_size", type=int, default=8)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--lrf", type=int, default=0.01)
-    parse.add_argument("--input_size", type=int, default=120)
+    parse.add_argument("--input_size", type=int, default=224)
     parse.add_argument("--epoch", type=int, default=50)
     parse.add_argument("--weight", type=str, default="")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
