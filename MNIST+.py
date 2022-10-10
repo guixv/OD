@@ -231,7 +231,7 @@ def train(opt, device):
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=4)
+    parse.add_argument("--batch_size", type=int, default=256)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--lrf", type=int, default=0.01)
     parse.add_argument("--epoch", type=int, default=5)
