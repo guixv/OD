@@ -17,14 +17,14 @@ import argparse
 import numpy as np
 import os
 
-from VGG import vgg
-from Resnet import res
-from densenet import dense
-from ViT import vit16
-from swinmodel import swin_base_patch4_window7_224
-from swinTransformer import swin_transformer
-from Res2Net import res2
-from vit_model import vit_base_patch16_224 as create_model
+from modules.VGG import vgg
+from modules.Resnet import res
+from modules.densenet import dense
+from modules.ViT import vit16
+from modules.swinmodel import swin_base_patch4_window7_224
+from modules.swinTransformer import swin_transformer
+from modules.Res2Net import res2
+from modules.vit_model import vit_base_patch16_224 as create_model
 import sys
 
 

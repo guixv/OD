@@ -2,8 +2,8 @@ import torch
 from PIL import Image
 from torch import nn
 from torchvision.transforms import transforms
-from VGG import vgg
-from Resnet import res
+from modules.VGG import vgg
+from modules.Resnet import res
 
 
 def main():
