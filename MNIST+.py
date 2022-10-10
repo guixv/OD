@@ -16,7 +16,7 @@ from utils.utils import Evaluation
 import argparse
 import numpy as np
 import os
-from MNISTmodule import res
+from modules.MNISTmodule import vgg
 
 def train_epoch(epoch, model, traindata, criterion, optimizer, device,scheduler):
     model.train()
@@ -108,7 +108,7 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = res(num_classes=class_num).to(device)
+    model = vgg(num_classes=class_num).to(device)
     if weight != "":
         assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
         weights_dict = torch.load(weight, map_location=device)["model"]
@@ -240,7 +240,7 @@ def main():
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="data/train")
     parse.add_argument("--val_path", type=str, default="data/val")
-    parse.add_argument("--class_num", type=int, default=5)
+    parse.add_argument("--class_num", type=int, default=10)
     parse.add_argument("--output_path", type=str, default="output/MNIST/")
 
     opt = parse.parse_args()
