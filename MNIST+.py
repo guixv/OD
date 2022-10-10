@@ -18,7 +18,8 @@ import numpy as np
 import os
 from modules.MNISTmodule import vgg
 
-def train_epoch(epoch, model, traindata, criterion, optimizer, device,scheduler):
+
+def train_epoch(epoch, model, traindata, criterion, optimizer, device, scheduler):
     model.train()
     true = []
     pre = []
@@ -73,7 +74,7 @@ def test_epoch(epoch, model, testdata, criterion, device):
     return Accuracy, Precision, Recall, F1Score, Loss
 
 
-def plot_draw(train_loss,test_loss,train_accur,test_accur,epoch,output_path):
+def plot_draw(train_loss, test_loss, train_accur, test_accur, epoch, output_path):
     # 下面的是画图过程，将上述存放的列表  画出来即可
     print(range(epoch + 1))
     print(train_loss)
@@ -97,6 +98,7 @@ def plot_draw(train_loss,test_loss,train_accur,test_accur,epoch,output_path):
     plt.savefig(output_path + 'val.png')
     plt.show()
 
+
 def train(opt, device):
     print("start training\n")
     batch_size = opt.batch_size
@@ -118,8 +120,6 @@ def train(opt, device):
                 del weights_dict[k]
         print(model.load_state_dict(weights_dict, strict=False))
 
-
-
     train_loader = torch.utils.data.DataLoader(
         torchvision.datasets.MNIST('./data/', train=True, download=True,
                                    transform=torchvision.transforms.Compose([
@@ -140,7 +140,7 @@ def train(opt, device):
     print("using {} device.".format(device))
 
     traindata = train_loader
-    testdata=test_loader
+    testdata = test_loader
     examples = enumerate(test_loader)
     batch_idx, (example_data, example_targets) = next(examples)
     # print(example_targets)
@@ -155,8 +155,6 @@ def train(opt, device):
     #     plt.xticks([])
     #     plt.yticks([])
     # plt.show()
-
-
 
     criterion = nn.CrossEntropyLoss().to(device)
     optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)  # 优化器
@@ -174,7 +172,6 @@ def train(opt, device):
     log_list_path = opt.output_path + "/log_list.txt"
     if os.path.exists(log_list_path):  # 如果log_eval.txt在存储之前存在则删除，防止后续内容冲突
         os.remove(log_list_path)
-
 
     train_loss = []  # 存放训练集损失的数组
     train_accur = []  # 存放训练集准确率的数组
@@ -227,14 +224,12 @@ def train(opt, device):
     plot_draw(train_loss, test_loss, train_accur, test_accur, epoch, output_path)
 
 
-
-
 def main():
     parse = argparse.ArgumentParser(description="classification")
     parse.add_argument("--batch_size", type=int, default=256)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--lrf", type=int, default=0.01)
-    parse.add_argument("--epoch", type=int, default=5)
+    parse.add_argument("--epoch", type=int, default=10)
     parse.add_argument("--weight", type=str, default="")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
@@ -255,5 +250,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
