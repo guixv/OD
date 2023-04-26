@@ -1,6 +1,15 @@
 import torch
 import torch.nn as nn
+from models.odconvx2 import ODConv2d
 
+def odconv3x3(in_planes, out_planes, stride=1, reduction=0.0625, kernel_num=1):
+    return ODConv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1,
+                    reduction=reduction, kernel_num=kernel_num)
+
+
+def odconv1x1(in_planes, out_planes, stride=1, reduction=0.0625, kernel_num=1):
+    return ODConv2d(in_planes, out_planes, kernel_size=1, stride=stride, padding=0,
+                    reduction=reduction, kernel_num=kernel_num)
 
 class Bottleneck(nn.Module):
     expansion = 4
@@ -8,11 +17,9 @@ class Bottleneck(nn.Module):
     def __init__(self, in_channel, out_channel, stride=1, width=64, down_sample=None):
         super(Bottleneck, self).__init__()
         width = 64
-        self.conv1 = nn.Conv2d(in_channels=in_channel, out_channels=width, kernel_size=(1, 1), stride=1, bias=False)
-        self.conv2 = nn.Conv2d(in_channels=width, out_channels=width, kernel_size=(3, 3), stride=stride, bias=False,
-                               padding=1)
-        self.conv3 = nn.Conv2d(in_channels=width, out_channels=out_channel * self.expansion,
-                               kernel_size=(1, 1), stride=1, bias=False)
+        self.conv1 = odconv1x1(in_channel, width, stride=1)
+        self.conv2 = odconv3x3(width, width,stride=stride)
+        self.conv3 = odconv1x1(width, out_channel * self.expansion, stride=1)
         self.bn1 = nn.BatchNorm2d(width)
         self.bn2 = nn.BatchNorm2d(width)
         self.bn3 = nn.BatchNorm2d(out_channel * self.expansion)
@@ -89,6 +96,11 @@ class ResNet(nn.Module):
             x = self.fc(x)
 
         return x
+
+    def net_update_temperature(self, temperature):
+        for m in self.modules():
+            if hasattr(m, "update_temperature"):
+                m.update_temperature(temperature)
 
     def make_layers(self, channel, block_type, block_num, stride=1):
         down_sample = None
