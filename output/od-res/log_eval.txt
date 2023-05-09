@@ -1,0 +1,8 @@
+======
+Train Epoch(0): Acc:0.2401 Prec:0.2401 Recall:0.2401 F1-score:0.2401 Loss:1.6061633628347645
+Test  Epoch(0): Acc:0.2 Prec:0.2 Recall:0.2 F1-score:0.2 Loss:1.6109566105736626
+Best Acc(Test):0.2
+======
+Train Epoch(1): Acc:0.2447 Prec:0.2447 Recall:0.2447 F1-score:0.2447 Loss:1.6022583323976267
+Test  Epoch(1): Acc:0.2 Prec:0.2 Recall:0.2 F1-score:0.2 Loss:1.6136753426657782
+Best Acc(Test):0.2

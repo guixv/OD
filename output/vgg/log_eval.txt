@@ -1,0 +1,76 @@
+======
+Train Epoch(0): Acc:0.4177 Prec:0.4177 Recall:0.4177 F1-score:0.4177 Loss:1.3684203037768927
+Test  Epoch(0): Acc:0.5306 Prec:0.5306 Recall:0.5306 F1-score:0.5306 Loss:1.104577253593339
+Best Acc(Test):0.5306
+======
+Train Epoch(1): Acc:0.5054 Prec:0.5054 Recall:0.5054 F1-score:0.5054 Loss:1.2312002961801807
+Test  Epoch(1): Acc:0.5611 Prec:0.5611 Recall:0.5611 F1-score:0.5611 Loss:1.0336095495356454
+Best Acc(Test):0.5611
+======
+Train Epoch(2): Acc:0.545 Prec:0.545 Recall:0.545 F1-score:0.545 Loss:1.150833033203819
+Test  Epoch(2): Acc:0.6611 Prec:0.6611 Recall:0.6611 F1-score:0.6611 Loss:0.876350818739997
+Best Acc(Test):0.6611
+======
+Train Epoch(3): Acc:0.5861 Prec:0.5861 Recall:0.5861 F1-score:0.5861 Loss:1.0738760869227724
+Test  Epoch(3): Acc:0.675 Prec:0.675 Recall:0.675 F1-score:0.675 Loss:0.9516734350058768
+Best Acc(Test):0.675
+======
+Train Epoch(4): Acc:0.5779 Prec:0.5779 Recall:0.5779 F1-score:0.5779 Loss:1.0918619755436392
+Test  Epoch(4): Acc:0.6417 Prec:0.6417 Recall:0.6417 F1-score:0.6417 Loss:0.8647014196548197
+Best Acc(Test):0.675
+======
+Train Epoch(5): Acc:0.6142 Prec:0.6142 Recall:0.6142 F1-score:0.6142 Loss:0.9886232200271423
+Test  Epoch(5): Acc:0.7028 Prec:0.7028 Recall:0.7028 F1-score:0.7028 Loss:0.7623374286625121
+Best Acc(Test):0.7028
+======
+Train Epoch(6): Acc:0.6398 Prec:0.6398 Recall:0.6398 F1-score:0.6398 Loss:0.9747604183641654
+Test  Epoch(6): Acc:0.725 Prec:0.725 Recall:0.725 F1-score:0.725 Loss:0.6480414768060049
+Best Acc(Test):0.725
+======
+Train Epoch(7): Acc:0.6409 Prec:0.6409 Recall:0.6409 F1-score:0.6409 Loss:0.9354182466182833
+Test  Epoch(7): Acc:0.6056 Prec:0.6056 Recall:0.6056 F1-score:0.6056 Loss:1.1221751955648263
+Best Acc(Test):0.725
+======
+Train Epoch(8): Acc:0.667 Prec:0.667 Recall:0.667 F1-score:0.667 Loss:0.8921699303492482
+Test  Epoch(8): Acc:0.7278 Prec:0.7278 Recall:0.7278 F1-score:0.7278 Loss:0.6966818476302756
+Best Acc(Test):0.7278
+======
+Train Epoch(9): Acc:0.6681 Prec:0.6681 Recall:0.6681 F1-score:0.6681 Loss:0.8736971415465694
+Test  Epoch(9): Acc:0.7194 Prec:0.7194 Recall:0.7194 F1-score:0.7194 Loss:0.7539482353876035
+Best Acc(Test):0.7278
+======
+Train Epoch(10): Acc:0.6779 Prec:0.6779 Recall:0.6779 F1-score:0.6779 Loss:0.842603821088286
+Test  Epoch(10): Acc:0.7556 Prec:0.7556 Recall:0.7556 F1-score:0.7556 Loss:0.6563775825210744
+Best Acc(Test):0.7556
+======
+Train Epoch(11): Acc:0.6891 Prec:0.6891 Recall:0.6891 F1-score:0.6891 Loss:0.8334127487959685
+Test  Epoch(11): Acc:0.7639 Prec:0.7639 Recall:0.7639 F1-score:0.7639 Loss:0.679209573732482
+Best Acc(Test):0.7639
+======
+Train Epoch(12): Acc:0.7079 Prec:0.7079 Recall:0.7079 F1-score:0.7079 Loss:0.7986194536674256
+Test  Epoch(12): Acc:0.7556 Prec:0.7556 Recall:0.7556 F1-score:0.7556 Loss:0.6709742825271354
+Best Acc(Test):0.7639
+======
+Train Epoch(13): Acc:0.7076 Prec:0.7076 Recall:0.7076 F1-score:0.7076 Loss:0.7960893993219259
+Test  Epoch(13): Acc:0.7389 Prec:0.7389 Recall:0.7389 F1-score:0.7389 Loss:0.6886647678083844
+Best Acc(Test):0.7639
+======
+Train Epoch(14): Acc:0.7196 Prec:0.7196 Recall:0.7196 F1-score:0.7196 Loss:0.7586180597608645
+Test  Epoch(14): Acc:0.7361 Prec:0.7361 Recall:0.7361 F1-score:0.7361 Loss:0.6919506917707622
+Best Acc(Test):0.7639
+======
+Train Epoch(15): Acc:0.7264 Prec:0.7264 Recall:0.7264 F1-score:0.7264 Loss:0.7550994782406261
+Test  Epoch(15): Acc:0.75 Prec:0.75 Recall:0.75 F1-score:0.75 Loss:0.6554771378222439
+Best Acc(Test):0.7639
+======
+Train Epoch(16): Acc:0.7289 Prec:0.7289 Recall:0.7289 F1-score:0.7289 Loss:0.7310731951837186
+Test  Epoch(16): Acc:0.8194 Prec:0.8194 Recall:0.8194 F1-score:0.8194 Loss:0.4809927468912469
+Best Acc(Test):0.8194
+======
+Train Epoch(17): Acc:0.7354 Prec:0.7354 Recall:0.7354 F1-score:0.7354 Loss:0.7157486398949862
+Test  Epoch(17): Acc:0.7972 Prec:0.7972 Recall:0.7972 F1-score:0.7972 Loss:0.52170270598597
+Best Acc(Test):0.8194
+======
+Train Epoch(18): Acc:0.7458 Prec:0.7458 Recall:0.7458 F1-score:0.7458 Loss:0.6868182043169578
+Test  Epoch(18): Acc:0.8028 Prec:0.8028 Recall:0.8028 F1-score:0.8028 Loss:0.5502703252351946
+Best Acc(Test):0.8194
