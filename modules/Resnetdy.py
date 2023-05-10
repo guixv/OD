@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from models.odconvx2 import ODConv2d
+from models.odconv import ODConv2d
 
 def odconv3x3(in_planes, out_planes, stride=1, reduction=0.0625, kernel_num=1):
     return ODConv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1,
