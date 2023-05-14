@@ -1,0 +1,1200 @@
+======
+Train Epoch(0): Acc:0.3044 Prec:0.3044 Recall:0.3044 F1-score:0.3044 Loss:1.7289944493252298
+Test  Epoch(0): Acc:0.4417 Prec:0.4417 Recall:0.4417 F1-score:0.4417 Loss:1.363000978594241
+Best Acc(Test):0.4417
+======
+Train Epoch(1): Acc:0.3924 Prec:0.3924 Recall:0.3924 F1-score:0.3924 Loss:1.3541293206422225
+Test  Epoch(1): Acc:0.4944 Prec:0.4944 Recall:0.4944 F1-score:0.4944 Loss:1.203961071760758
+Best Acc(Test):0.4944
+======
+Train Epoch(2): Acc:0.4341 Prec:0.4341 Recall:0.4341 F1-score:0.4341 Loss:1.3007835025372712
+Test  Epoch(2): Acc:0.4694 Prec:0.4694 Recall:0.4694 F1-score:0.4694 Loss:1.1965662577877874
+Best Acc(Test):0.4944
+======
+Train Epoch(3): Acc:0.4597 Prec:0.4597 Recall:0.4597 F1-score:0.4597 Loss:1.2518869099409684
+Test  Epoch(3): Acc:0.5306 Prec:0.5306 Recall:0.5306 F1-score:0.5306 Loss:1.1574798615082451
+Best Acc(Test):0.5306
+======
+Train Epoch(4): Acc:0.4869 Prec:0.4869 Recall:0.4869 F1-score:0.4869 Loss:1.2015409448872443
+Test  Epoch(4): Acc:0.4889 Prec:0.4889 Recall:0.4889 F1-score:0.4889 Loss:1.1499867776165837
+Best Acc(Test):0.5306
+======
+Train Epoch(5): Acc:0.4975 Prec:0.4975 Recall:0.4975 F1-score:0.4975 Loss:1.16643713194391
+Test  Epoch(5): Acc:0.5833 Prec:0.5833 Recall:0.5833 F1-score:0.5833 Loss:0.9983426773029825
+Best Acc(Test):0.5833
+======
+Train Epoch(6): Acc:0.5038 Prec:0.5038 Recall:0.5038 F1-score:0.5038 Loss:1.165270157482313
+Test  Epoch(6): Acc:0.5083 Prec:0.5083 Recall:0.5083 F1-score:0.5083 Loss:1.108237678590028
+Best Acc(Test):0.5833
+======
+Train Epoch(7): Acc:0.515 Prec:0.515 Recall:0.515 F1-score:0.515 Loss:1.1520914694537288
+Test  Epoch(7): Acc:0.5472 Prec:0.5472 Recall:0.5472 F1-score:0.5472 Loss:1.0910132993822512
+Best Acc(Test):0.5833
+======
+Train Epoch(8): Acc:0.5229 Prec:0.5229 Recall:0.5229 F1-score:0.5229 Loss:1.132509476205577
+Test  Epoch(8): Acc:0.6 Prec:0.6 Recall:0.6 F1-score:0.6 Loss:1.0067852968754976
+Best Acc(Test):0.6
+======
+Train Epoch(9): Acc:0.5221 Prec:0.5221 Recall:0.5221 F1-score:0.5221 Loss:1.1221734928048175
+Test  Epoch(9): Acc:0.55 Prec:0.55 Recall:0.55 F1-score:0.55 Loss:1.0305746508681255
+Best Acc(Test):0.6
+======
+Train Epoch(10): Acc:0.5458 Prec:0.5458 Recall:0.5458 F1-score:0.5458 Loss:1.1139514083447664
+Test  Epoch(10): Acc:0.5556 Prec:0.5556 Recall:0.5556 F1-score:0.5556 Loss:1.0172277326169221
+Best Acc(Test):0.6
+======
+Train Epoch(11): Acc:0.5619 Prec:0.5619 Recall:0.5619 F1-score:0.5619 Loss:1.0788689545963122
+Test  Epoch(11): Acc:0.5917 Prec:0.5917 Recall:0.5917 F1-score:0.5917 Loss:0.9834653294604757
+Best Acc(Test):0.6
+======
+Train Epoch(12): Acc:0.5567 Prec:0.5567 Recall:0.5567 F1-score:0.5567 Loss:1.08468991673511
+Test  Epoch(12): Acc:0.6639 Prec:0.6639 Recall:0.6639 F1-score:0.6639 Loss:0.8994049559468809
+Best Acc(Test):0.6639
+======
+Train Epoch(13): Acc:0.5804 Prec:0.5804 Recall:0.5804 F1-score:0.5804 Loss:1.0541006103805874
+Test  Epoch(13): Acc:0.6833 Prec:0.6833 Recall:0.6833 F1-score:0.6833 Loss:0.9013483938963517
+Best Acc(Test):0.6833
+======
+Train Epoch(14): Acc:0.5935 Prec:0.5935 Recall:0.5935 F1-score:0.5935 Loss:1.0216059622557268
+Test  Epoch(14): Acc:0.5778 Prec:0.5778 Recall:0.5778 F1-score:0.5778 Loss:0.988076502862184
+Best Acc(Test):0.6833
+======
+Train Epoch(15): Acc:0.6044 Prec:0.6044 Recall:0.6044 F1-score:0.6044 Loss:1.016948732604151
+Test  Epoch(15): Acc:0.6389 Prec:0.6389 Recall:0.6389 F1-score:0.6389 Loss:0.9200289223505103
+Best Acc(Test):0.6833
+======
+Train Epoch(16): Acc:0.6144 Prec:0.6144 Recall:0.6144 F1-score:0.6144 Loss:0.9771823675736137
+Test  Epoch(16): Acc:0.6472 Prec:0.6472 Recall:0.6472 F1-score:0.6472 Loss:0.8908491860265317
+Best Acc(Test):0.6833
+======
+Train Epoch(17): Acc:0.6144 Prec:0.6144 Recall:0.6144 F1-score:0.6144 Loss:0.9816826835922573
+Test  Epoch(17): Acc:0.675 Prec:0.675 Recall:0.675 F1-score:0.675 Loss:0.8973340754923613
+Best Acc(Test):0.6833
+======
+Train Epoch(18): Acc:0.6136 Prec:0.6136 Recall:0.6136 F1-score:0.6136 Loss:0.9774943294732467
+Test  Epoch(18): Acc:0.6639 Prec:0.6639 Recall:0.6639 F1-score:0.6639 Loss:0.8872293544852216
+Best Acc(Test):0.6833
+======
+Train Epoch(19): Acc:0.6376 Prec:0.6376 Recall:0.6376 F1-score:0.6376 Loss:0.944059783997743
+Test  Epoch(19): Acc:0.6417 Prec:0.6417 Recall:0.6417 F1-score:0.6417 Loss:0.8768629846365555
+Best Acc(Test):0.6833
+======
+Train Epoch(20): Acc:0.6332 Prec:0.6332 Recall:0.6332 F1-score:0.6332 Loss:0.9300711613634358
+Test  Epoch(20): Acc:0.6722 Prec:0.6722 Recall:0.6722 F1-score:0.6722 Loss:0.8363638585028441
+Best Acc(Test):0.6833
+======
+Train Epoch(21): Acc:0.6572 Prec:0.6572 Recall:0.6572 F1-score:0.6572 Loss:0.8970811050871145
+Test  Epoch(21): Acc:0.6444 Prec:0.6444 Recall:0.6444 F1-score:0.6444 Loss:0.91862901656524
+Best Acc(Test):0.6833
+======
+Train Epoch(22): Acc:0.6499 Prec:0.6499 Recall:0.6499 F1-score:0.6499 Loss:0.9152588849482329
+Test  Epoch(22): Acc:0.7028 Prec:0.7028 Recall:0.7028 F1-score:0.7028 Loss:0.7838448674782462
+Best Acc(Test):0.7028
+======
+Train Epoch(23): Acc:0.6444 Prec:0.6444 Recall:0.6444 F1-score:0.6444 Loss:0.9190334371898485
+Test  Epoch(23): Acc:0.6611 Prec:0.6611 Recall:0.6611 F1-score:0.6611 Loss:0.813126221947048
+Best Acc(Test):0.7028
+======
+Train Epoch(24): Acc:0.6589 Prec:0.6589 Recall:0.6589 F1-score:0.6589 Loss:0.8736227320588154
+Test  Epoch(24): Acc:0.6944 Prec:0.6944 Recall:0.6944 F1-score:0.6944 Loss:0.7846661223017651
+Best Acc(Test):0.7028
+======
+Train Epoch(25): Acc:0.6569 Prec:0.6569 Recall:0.6569 F1-score:0.6569 Loss:0.886059479350629
+Test  Epoch(25): Acc:0.6889 Prec:0.6889 Recall:0.6889 F1-score:0.6889 Loss:0.7657044193019038
+Best Acc(Test):0.7028
+======
+Train Epoch(26): Acc:0.6662 Prec:0.6662 Recall:0.6662 F1-score:0.6662 Loss:0.8691223232642464
+Test  Epoch(26): Acc:0.6917 Prec:0.6917 Recall:0.6917 F1-score:0.6917 Loss:0.8127537434515746
+Best Acc(Test):0.7028
+======
+Train Epoch(27): Acc:0.6643 Prec:0.6643 Recall:0.6643 F1-score:0.6643 Loss:0.8579404027565666
+Test  Epoch(27): Acc:0.6833 Prec:0.6833 Recall:0.6833 F1-score:0.6833 Loss:0.7703048353609832
+Best Acc(Test):0.7028
+======
+Train Epoch(28): Acc:0.6676 Prec:0.6676 Recall:0.6676 F1-score:0.6676 Loss:0.86392829677333
+Test  Epoch(28): Acc:0.6861 Prec:0.6861 Recall:0.6861 F1-score:0.6861 Loss:0.7940690659958384
+Best Acc(Test):0.7028
+======
+Train Epoch(29): Acc:0.6826 Prec:0.6826 Recall:0.6826 F1-score:0.6826 Loss:0.827918074960294
+Test  Epoch(29): Acc:0.7278 Prec:0.7278 Recall:0.7278 F1-score:0.7278 Loss:0.7630343061426411
+Best Acc(Test):0.7278
+======
+Train Epoch(30): Acc:0.6749 Prec:0.6749 Recall:0.6749 F1-score:0.6749 Loss:0.8403068335159966
+Test  Epoch(30): Acc:0.675 Prec:0.675 Recall:0.675 F1-score:0.675 Loss:0.8075179133726202
+Best Acc(Test):0.7278
+======
+Train Epoch(31): Acc:0.6728 Prec:0.6728 Recall:0.6728 F1-score:0.6728 Loss:0.8429070905498837
+Test  Epoch(31): Acc:0.7139 Prec:0.7139 Recall:0.7139 F1-score:0.7139 Loss:0.7330757923748182
+Best Acc(Test):0.7278
+======
+Train Epoch(32): Acc:0.6946 Prec:0.6946 Recall:0.6946 F1-score:0.6946 Loss:0.8044848825620569
+Test  Epoch(32): Acc:0.7194 Prec:0.7194 Recall:0.7194 F1-score:0.7194 Loss:0.6686869134073672
+Best Acc(Test):0.7278
+======
+Train Epoch(33): Acc:0.682 Prec:0.682 Recall:0.682 F1-score:0.682 Loss:0.8287885684034099
+Test  Epoch(33): Acc:0.6611 Prec:0.6611 Recall:0.6611 F1-score:0.6611 Loss:0.805449374344038
+Best Acc(Test):0.7278
+======
+Train Epoch(34): Acc:0.697 Prec:0.697 Recall:0.697 F1-score:0.697 Loss:0.8046535136906997
+Test  Epoch(34): Acc:0.7194 Prec:0.7194 Recall:0.7194 F1-score:0.7194 Loss:0.6956699658995089
+Best Acc(Test):0.7278
+======
+Train Epoch(35): Acc:0.7003 Prec:0.7003 Recall:0.7003 F1-score:0.7003 Loss:0.7887599595215009
+Test  Epoch(35): Acc:0.7306 Prec:0.7306 Recall:0.7306 F1-score:0.7306 Loss:0.6896845387375873
+Best Acc(Test):0.7306
+======
+Train Epoch(36): Acc:0.6913 Prec:0.6913 Recall:0.6913 F1-score:0.6913 Loss:0.8000027565852456
+Test  Epoch(36): Acc:0.7028 Prec:0.7028 Recall:0.7028 F1-score:0.7028 Loss:0.7474059255226798
+Best Acc(Test):0.7306
+======
+Train Epoch(37): Acc:0.7025 Prec:0.7025 Recall:0.7025 F1-score:0.7025 Loss:0.7933714985847473
+Test  Epoch(37): Acc:0.7278 Prec:0.7278 Recall:0.7278 F1-score:0.7278 Loss:0.714997173651405
+Best Acc(Test):0.7306
+======
+Train Epoch(38): Acc:0.7065 Prec:0.7065 Recall:0.7065 F1-score:0.7065 Loss:0.7744082769621974
+Test  Epoch(38): Acc:0.7056 Prec:0.7056 Recall:0.7056 F1-score:0.7056 Loss:0.7499418802883314
+Best Acc(Test):0.7306
+======
+Train Epoch(39): Acc:0.709 Prec:0.709 Recall:0.709 F1-score:0.709 Loss:0.7736192470011504
+Test  Epoch(39): Acc:0.7028 Prec:0.7028 Recall:0.7028 F1-score:0.7028 Loss:0.7651706091735674
+Best Acc(Test):0.7306
+======
+Train Epoch(40): Acc:0.712 Prec:0.712 Recall:0.712 F1-score:0.712 Loss:0.7664845165999039
+Test  Epoch(40): Acc:0.7389 Prec:0.7389 Recall:0.7389 F1-score:0.7389 Loss:0.6700025058310964
+Best Acc(Test):0.7389
+======
+Train Epoch(41): Acc:0.7084 Prec:0.7084 Recall:0.7084 F1-score:0.7084 Loss:0.749912607928981
+Test  Epoch(41): Acc:0.6944 Prec:0.6944 Recall:0.6944 F1-score:0.6944 Loss:0.7632566159186156
+Best Acc(Test):0.7389
+======
+Train Epoch(42): Acc:0.7112 Prec:0.7112 Recall:0.7112 F1-score:0.7112 Loss:0.7539859064247297
+Test  Epoch(42): Acc:0.7306 Prec:0.7306 Recall:0.7306 F1-score:0.7306 Loss:0.7370201815729556
+Best Acc(Test):0.7389
+======
+Train Epoch(43): Acc:0.7136 Prec:0.7136 Recall:0.7136 F1-score:0.7136 Loss:0.7646813965362051
+Test  Epoch(43): Acc:0.7444 Prec:0.7444 Recall:0.7444 F1-score:0.7444 Loss:0.6379301249980927
+Best Acc(Test):0.7444
+======
+Train Epoch(44): Acc:0.7155 Prec:0.7155 Recall:0.7155 F1-score:0.7155 Loss:0.7496032880700153
+Test  Epoch(44): Acc:0.7528 Prec:0.7528 Recall:0.7528 F1-score:0.7528 Loss:0.6469459119050399
+Best Acc(Test):0.7528
+======
+Train Epoch(45): Acc:0.7172 Prec:0.7172 Recall:0.7172 F1-score:0.7172 Loss:0.7476085141949032
+Test  Epoch(45): Acc:0.7361 Prec:0.7361 Recall:0.7361 F1-score:0.7361 Loss:0.6822767387265745
+Best Acc(Test):0.7528
+======
+Train Epoch(46): Acc:0.7025 Prec:0.7025 Recall:0.7025 F1-score:0.7025 Loss:0.7787030590617139
+Test  Epoch(46): Acc:0.7389 Prec:0.7389 Recall:0.7389 F1-score:0.7389 Loss:0.7144287824630737
+Best Acc(Test):0.7528
+======
+Train Epoch(47): Acc:0.712 Prec:0.712 Recall:0.712 F1-score:0.712 Loss:0.7557891052702199
+Test  Epoch(47): Acc:0.7528 Prec:0.7528 Recall:0.7528 F1-score:0.7528 Loss:0.6053592925486357
+Best Acc(Test):0.7528
+======
+Train Epoch(48): Acc:0.7215 Prec:0.7215 Recall:0.7215 F1-score:0.7215 Loss:0.7327420535294906
+Test  Epoch(48): Acc:0.7389 Prec:0.7389 Recall:0.7389 F1-score:0.7389 Loss:0.634634370389192
+Best Acc(Test):0.7528
+======
+Train Epoch(49): Acc:0.7229 Prec:0.7229 Recall:0.7229 F1-score:0.7229 Loss:0.7319644515929015
+Test  Epoch(49): Acc:0.7556 Prec:0.7556 Recall:0.7556 F1-score:0.7556 Loss:0.6275516333787338
+Best Acc(Test):0.7556
+======
+Train Epoch(50): Acc:0.7166 Prec:0.7166 Recall:0.7166 F1-score:0.7166 Loss:0.7373221345569776
+Test  Epoch(50): Acc:0.7361 Prec:0.7361 Recall:0.7361 F1-score:0.7361 Loss:0.6468289170576178
+Best Acc(Test):0.7556
+======
+Train Epoch(51): Acc:0.7204 Prec:0.7204 Recall:0.7204 F1-score:0.7204 Loss:0.7347388710664666
+Test  Epoch(51): Acc:0.75 Prec:0.75 Recall:0.75 F1-score:0.75 Loss:0.6056793584771778
+Best Acc(Test):0.7556
+======
+Train Epoch(52): Acc:0.7441 Prec:0.7441 Recall:0.7441 F1-score:0.7441 Loss:0.6959616642931233
+Test  Epoch(52): Acc:0.7611 Prec:0.7611 Recall:0.7611 F1-score:0.7611 Loss:0.6660254947517229
+Best Acc(Test):0.7611
+======
+Train Epoch(53): Acc:0.724 Prec:0.724 Recall:0.724 F1-score:0.724 Loss:0.7283914757811505
+Test  Epoch(53): Acc:0.7806 Prec:0.7806 Recall:0.7806 F1-score:0.7806 Loss:0.5934039743050284
+Best Acc(Test):0.7806
+======
+Train Epoch(54): Acc:0.7387 Prec:0.7387 Recall:0.7387 F1-score:0.7387 Loss:0.6978354741697727
+Test  Epoch(54): Acc:0.7667 Prec:0.7667 Recall:0.7667 F1-score:0.7667 Loss:0.5612925874150317
+Best Acc(Test):0.7806
+======
+Train Epoch(55): Acc:0.7158 Prec:0.7158 Recall:0.7158 F1-score:0.7158 Loss:0.7334865668545598
+Test  Epoch(55): Acc:0.75 Prec:0.75 Recall:0.75 F1-score:0.75 Loss:0.6294101437796717
+Best Acc(Test):0.7806
+======
+Train Epoch(56): Acc:0.7316 Prec:0.7316 Recall:0.7316 F1-score:0.7316 Loss:0.7003681112890658
+Test  Epoch(56): Acc:0.7333 Prec:0.7333 Recall:0.7333 F1-score:0.7333 Loss:0.6744758175766986
+Best Acc(Test):0.7806
+======
+Train Epoch(57): Acc:0.7409 Prec:0.7409 Recall:0.7409 F1-score:0.7409 Loss:0.6907072028388148
+Test  Epoch(57): Acc:0.7722 Prec:0.7722 Recall:0.7722 F1-score:0.7722 Loss:0.5827194160741308
+Best Acc(Test):0.7806
+======
+Train Epoch(58): Acc:0.7414 Prec:0.7414 Recall:0.7414 F1-score:0.7414 Loss:0.6939759907515153
+Test  Epoch(58): Acc:0.7583 Prec:0.7583 Recall:0.7583 F1-score:0.7583 Loss:0.620915016402369
+Best Acc(Test):0.7806
+======
+Train Epoch(59): Acc:0.7433 Prec:0.7433 Recall:0.7433 F1-score:0.7433 Loss:0.684714593058047
+Test  Epoch(59): Acc:0.7583 Prec:0.7583 Recall:0.7583 F1-score:0.7583 Loss:0.5919508052908856
+Best Acc(Test):0.7806
+======
+Train Epoch(60): Acc:0.7335 Prec:0.7335 Recall:0.7335 F1-score:0.7335 Loss:0.6999369217001874
+Test  Epoch(60): Acc:0.7222 Prec:0.7222 Recall:0.7222 F1-score:0.7222 Loss:0.664050086684849
+Best Acc(Test):0.7806
+======
+Train Epoch(61): Acc:0.7542 Prec:0.7542 Recall:0.7542 F1-score:0.7542 Loss:0.6756196561067
+Test  Epoch(61): Acc:0.7694 Prec:0.7694 Recall:0.7694 F1-score:0.7694 Loss:0.6082591971625453
+Best Acc(Test):0.7806
+======
+Train Epoch(62): Acc:0.748 Prec:0.748 Recall:0.748 F1-score:0.748 Loss:0.6754783684792726
+Test  Epoch(62): Acc:0.7778 Prec:0.7778 Recall:0.7778 F1-score:0.7778 Loss:0.5731410034324812
+Best Acc(Test):0.7806
+======
+Train Epoch(63): Acc:0.7567 Prec:0.7567 Recall:0.7567 F1-score:0.7567 Loss:0.6507018073745395
+Test  Epoch(63): Acc:0.7556 Prec:0.7556 Recall:0.7556 F1-score:0.7556 Loss:0.6119625088961228
+Best Acc(Test):0.7806
+======
+Train Epoch(64): Acc:0.7545 Prec:0.7545 Recall:0.7545 F1-score:0.7545 Loss:0.6572061857451563
+Test  Epoch(64): Acc:0.7944 Prec:0.7944 Recall:0.7944 F1-score:0.7944 Loss:0.5195134197888167
+Best Acc(Test):0.7944
+======
+Train Epoch(65): Acc:0.7403 Prec:0.7403 Recall:0.7403 F1-score:0.7403 Loss:0.6847452726053155
+Test  Epoch(65): Acc:0.7861 Prec:0.7861 Recall:0.7861 F1-score:0.7861 Loss:0.5359108065781386
+Best Acc(Test):0.7944
+======
+Train Epoch(66): Acc:0.7629 Prec:0.7629 Recall:0.7629 F1-score:0.7629 Loss:0.632138803212539
+Test  Epoch(66): Acc:0.7722 Prec:0.7722 Recall:0.7722 F1-score:0.7722 Loss:0.5744165959565536
+Best Acc(Test):0.7944
+======
+Train Epoch(67): Acc:0.7542 Prec:0.7542 Recall:0.7542 F1-score:0.7542 Loss:0.6644441617571789
+Test  Epoch(67): Acc:0.7722 Prec:0.7722 Recall:0.7722 F1-score:0.7722 Loss:0.6321069948051287
+Best Acc(Test):0.7944
+======
+Train Epoch(68): Acc:0.7485 Prec:0.7485 Recall:0.7485 F1-score:0.7485 Loss:0.6599406566308892
+Test  Epoch(68): Acc:0.7833 Prec:0.7833 Recall:0.7833 F1-score:0.7833 Loss:0.6097894537708034
+Best Acc(Test):0.7944
+======
+Train Epoch(69): Acc:0.7471 Prec:0.7471 Recall:0.7471 F1-score:0.7471 Loss:0.6598824918270111
+Test  Epoch(69): Acc:0.7444 Prec:0.7444 Recall:0.7444 F1-score:0.7444 Loss:0.6776908441730167
+Best Acc(Test):0.7944
+======
+Train Epoch(70): Acc:0.7512 Prec:0.7512 Recall:0.7512 F1-score:0.7512 Loss:0.6469255779100501
+Test  Epoch(70): Acc:0.7667 Prec:0.7667 Recall:0.7667 F1-score:0.7667 Loss:0.6166146041258521
+Best Acc(Test):0.7944
+======
+Train Epoch(71): Acc:0.7599 Prec:0.7599 Recall:0.7599 F1-score:0.7599 Loss:0.6564063624195431
+Test  Epoch(71): Acc:0.7833 Prec:0.7833 Recall:0.7833 F1-score:0.7833 Loss:0.568002383346143
+Best Acc(Test):0.7944
+======
+Train Epoch(72): Acc:0.7553 Prec:0.7553 Recall:0.7553 F1-score:0.7553 Loss:0.625543465303338
+Test  Epoch(72): Acc:0.7861 Prec:0.7861 Recall:0.7861 F1-score:0.7861 Loss:0.5446620207765828
+Best Acc(Test):0.7944
+======
+Train Epoch(73): Acc:0.7597 Prec:0.7597 Recall:0.7597 F1-score:0.7597 Loss:0.6348186407400214
+Test  Epoch(73): Acc:0.7917 Prec:0.7917 Recall:0.7917 F1-score:0.7917 Loss:0.5371628921964894
+Best Acc(Test):0.7944
+======
+Train Epoch(74): Acc:0.7684 Prec:0.7684 Recall:0.7684 F1-score:0.7684 Loss:0.6198452387167059
+Test  Epoch(74): Acc:0.7944 Prec:0.7944 Recall:0.7944 F1-score:0.7944 Loss:0.5320766943952312
+Best Acc(Test):0.7944
+======
+Train Epoch(75): Acc:0.7728 Prec:0.7728 Recall:0.7728 F1-score:0.7728 Loss:0.6053336796553238
+Test  Epoch(75): Acc:0.7667 Prec:0.7667 Recall:0.7667 F1-score:0.7667 Loss:0.542909702529078
+Best Acc(Test):0.7944
+======
+Train Epoch(76): Acc:0.7738 Prec:0.7738 Recall:0.7738 F1-score:0.7738 Loss:0.6033776436163032
+Test  Epoch(76): Acc:0.7417 Prec:0.7417 Recall:0.7417 F1-score:0.7417 Loss:0.5958031370587971
+Best Acc(Test):0.7944
+======
+Train Epoch(77): Acc:0.7698 Prec:0.7698 Recall:0.7698 F1-score:0.7698 Loss:0.604626697042714
+Test  Epoch(77): Acc:0.7833 Prec:0.7833 Recall:0.7833 F1-score:0.7833 Loss:0.5093061405679454
+Best Acc(Test):0.7944
+======
+Train Epoch(78): Acc:0.7706 Prec:0.7706 Recall:0.7706 F1-score:0.7706 Loss:0.6151773113271465
+Test  Epoch(78): Acc:0.7917 Prec:0.7917 Recall:0.7917 F1-score:0.7917 Loss:0.5285963053288667
+Best Acc(Test):0.7944
+======
+Train Epoch(79): Acc:0.7787 Prec:0.7787 Recall:0.7787 F1-score:0.7787 Loss:0.5952519367570462
+Test  Epoch(79): Acc:0.7694 Prec:0.7694 Recall:0.7694 F1-score:0.7694 Loss:0.6468129170977551
+Best Acc(Test):0.7944
+======
+Train Epoch(80): Acc:0.7605 Prec:0.7605 Recall:0.7605 F1-score:0.7605 Loss:0.6201605625774549
+Test  Epoch(80): Acc:0.8083 Prec:0.8083 Recall:0.8083 F1-score:0.8083 Loss:0.4859989304905352
+Best Acc(Test):0.8083
+======
+Train Epoch(81): Acc:0.7787 Prec:0.7787 Recall:0.7787 F1-score:0.7787 Loss:0.5720994340336841
+Test  Epoch(81): Acc:0.8028 Prec:0.8028 Recall:0.8028 F1-score:0.8028 Loss:0.5032966214677562
+Best Acc(Test):0.8083
+======
+Train Epoch(82): Acc:0.7837 Prec:0.7837 Recall:0.7837 F1-score:0.7837 Loss:0.5969719894554304
+Test  Epoch(82): Acc:0.7861 Prec:0.7861 Recall:0.7861 F1-score:0.7861 Loss:0.5791142051634581
+Best Acc(Test):0.8083
+======
+Train Epoch(83): Acc:0.7902 Prec:0.7902 Recall:0.7902 F1-score:0.7902 Loss:0.5763292138991148
+Test  Epoch(83): Acc:0.8056 Prec:0.8056 Recall:0.8056 F1-score:0.8056 Loss:0.49949074245017505
+Best Acc(Test):0.8083
+======
+Train Epoch(84): Acc:0.7787 Prec:0.7787 Recall:0.7787 F1-score:0.7787 Loss:0.5818823736646901
+Test  Epoch(84): Acc:0.8278 Prec:0.8278 Recall:0.8278 F1-score:0.8278 Loss:0.4587791769400887
+Best Acc(Test):0.8278
+======
+Train Epoch(85): Acc:0.7924 Prec:0.7924 Recall:0.7924 F1-score:0.7924 Loss:0.5716756025086278
+Test  Epoch(85): Acc:0.7889 Prec:0.7889 Recall:0.7889 F1-score:0.7889 Loss:0.525606966536978
+Best Acc(Test):0.8278
+======
+Train Epoch(86): Acc:0.7826 Prec:0.7826 Recall:0.7826 F1-score:0.7826 Loss:0.5771721882664639
+Test  Epoch(86): Acc:0.8333 Prec:0.8333 Recall:0.8333 F1-score:0.8333 Loss:0.43515053585819574
+Best Acc(Test):0.8333
+======
+Train Epoch(87): Acc:0.7678 Prec:0.7678 Recall:0.7678 F1-score:0.7678 Loss:0.5968463229096455
+Test  Epoch(87): Acc:0.825 Prec:0.825 Recall:0.825 F1-score:0.825 Loss:0.4740550213533899
+Best Acc(Test):0.8333
+======
+Train Epoch(88): Acc:0.7886 Prec:0.7886 Recall:0.7886 F1-score:0.7886 Loss:0.5699398745661196
+Test  Epoch(88): Acc:0.8083 Prec:0.8083 Recall:0.8083 F1-score:0.8083 Loss:0.4876106193532114
+Best Acc(Test):0.8333
+======
+Train Epoch(89): Acc:0.797 Prec:0.797 Recall:0.797 F1-score:0.797 Loss:0.5541470556155496
+Test  Epoch(89): Acc:0.8167 Prec:0.8167 Recall:0.8167 F1-score:0.8167 Loss:0.45207755850709
+Best Acc(Test):0.8333
+======
+Train Epoch(90): Acc:0.7954 Prec:0.7954 Recall:0.7954 F1-score:0.7954 Loss:0.5478170265322146
+Test  Epoch(90): Acc:0.7889 Prec:0.7889 Recall:0.7889 F1-score:0.7889 Loss:0.5912955481073131
+Best Acc(Test):0.8333
+======
+Train Epoch(91): Acc:0.7828 Prec:0.7828 Recall:0.7828 F1-score:0.7828 Loss:0.5558940424867298
+Test  Epoch(91): Acc:0.7861 Prec:0.7861 Recall:0.7861 F1-score:0.7861 Loss:0.48983659400888113
+Best Acc(Test):0.8333
+======
+Train Epoch(92): Acc:0.7956 Prec:0.7956 Recall:0.7956 F1-score:0.7956 Loss:0.5516291337168735
+Test  Epoch(92): Acc:0.8444 Prec:0.8444 Recall:0.8444 F1-score:0.8444 Loss:0.4257173049061195
+Best Acc(Test):0.8444
+======
+Train Epoch(93): Acc:0.7965 Prec:0.7965 Recall:0.7965 F1-score:0.7965 Loss:0.5503488062516503
+Test  Epoch(93): Acc:0.8167 Prec:0.8167 Recall:0.8167 F1-score:0.8167 Loss:0.45688604109961056
+Best Acc(Test):0.8444
+======
+Train Epoch(94): Acc:0.8076 Prec:0.8076 Recall:0.8076 F1-score:0.8076 Loss:0.5202124307984891
+Test  Epoch(94): Acc:0.8278 Prec:0.8278 Recall:0.8278 F1-score:0.8278 Loss:0.4782880829728168
+Best Acc(Test):0.8444
+======
+Train Epoch(95): Acc:0.7899 Prec:0.7899 Recall:0.7899 F1-score:0.7899 Loss:0.547627255709275
+Test  Epoch(95): Acc:0.8139 Prec:0.8139 Recall:0.8139 F1-score:0.8139 Loss:0.48030618740164716
+Best Acc(Test):0.8444
+======
+Train Epoch(96): Acc:0.7932 Prec:0.7932 Recall:0.7932 F1-score:0.7932 Loss:0.5481715504242026
+Test  Epoch(96): Acc:0.8389 Prec:0.8389 Recall:0.8389 F1-score:0.8389 Loss:0.43232349111982016
+Best Acc(Test):0.8444
+======
+Train Epoch(97): Acc:0.7956 Prec:0.7956 Recall:0.7956 F1-score:0.7956 Loss:0.5385630476733912
+Test  Epoch(97): Acc:0.8278 Prec:0.8278 Recall:0.8278 F1-score:0.8278 Loss:0.4377889879371809
+Best Acc(Test):0.8444
+======
+Train Epoch(98): Acc:0.8112 Prec:0.8112 Recall:0.8112 F1-score:0.8112 Loss:0.5164150161587674
+Test  Epoch(98): Acc:0.8083 Prec:0.8083 Recall:0.8083 F1-score:0.8083 Loss:0.5298704757638599
+Best Acc(Test):0.8444
+======
+Train Epoch(99): Acc:0.7997 Prec:0.7997 Recall:0.7997 F1-score:0.7997 Loss:0.5330441265002541
+Test  Epoch(99): Acc:0.825 Prec:0.825 Recall:0.825 F1-score:0.825 Loss:0.43171036113863404
+Best Acc(Test):0.8444
+======
+Train Epoch(100): Acc:0.7981 Prec:0.7981 Recall:0.7981 F1-score:0.7981 Loss:0.5587928529666818
+Test  Epoch(100): Acc:0.8111 Prec:0.8111 Recall:0.8111 F1-score:0.8111 Loss:0.46181532870168274
+Best Acc(Test):0.8444
+======
+Train Epoch(101): Acc:0.8063 Prec:0.8063 Recall:0.8063 F1-score:0.8063 Loss:0.5224929554306943
+Test  Epoch(101): Acc:0.8222 Prec:0.8222 Recall:0.8222 F1-score:0.8222 Loss:0.43878191903881403
+Best Acc(Test):0.8444
+======
+Train Epoch(102): Acc:0.8104 Prec:0.8104 Recall:0.8104 F1-score:0.8104 Loss:0.5047824438499368
+Test  Epoch(102): Acc:0.8444 Prec:0.8444 Recall:0.8444 F1-score:0.8444 Loss:0.4043632068711778
+Best Acc(Test):0.8444
+======
+Train Epoch(103): Acc:0.8134 Prec:0.8134 Recall:0.8134 F1-score:0.8134 Loss:0.5164258845474409
+Test  Epoch(103): Acc:0.8333 Prec:0.8333 Recall:0.8333 F1-score:0.8333 Loss:0.45146689466808154
+Best Acc(Test):0.8444
+======
+Train Epoch(104): Acc:0.7956 Prec:0.7956 Recall:0.7956 F1-score:0.7956 Loss:0.5262262238108594
+Test  Epoch(104): Acc:0.85 Prec:0.85 Recall:0.85 F1-score:0.85 Loss:0.41249618452528247
+Best Acc(Test):0.85
+======
+Train Epoch(105): Acc:0.8087 Prec:0.8087 Recall:0.8087 F1-score:0.8087 Loss:0.5060670602580776
+Test  Epoch(105): Acc:0.8333 Prec:0.8333 Recall:0.8333 F1-score:0.8333 Loss:0.3922892063856125
+Best Acc(Test):0.85
+======
+Train Epoch(106): Acc:0.8147 Prec:0.8147 Recall:0.8147 F1-score:0.8147 Loss:0.49815523818783136
+Test  Epoch(106): Acc:0.8417 Prec:0.8417 Recall:0.8417 F1-score:0.8417 Loss:0.42478734060474066
+Best Acc(Test):0.85
+======
+Train Epoch(107): Acc:0.8193 Prec:0.8193 Recall:0.8193 F1-score:0.8193 Loss:0.4958366852739583
+Test  Epoch(107): Acc:0.8472 Prec:0.8472 Recall:0.8472 F1-score:0.8472 Loss:0.43144987232011295
+Best Acc(Test):0.85
+======
+Train Epoch(108): Acc:0.8109 Prec:0.8109 Recall:0.8109 F1-score:0.8109 Loss:0.5051508658606073
+Test  Epoch(108): Acc:0.8444 Prec:0.8444 Recall:0.8444 F1-score:0.8444 Loss:0.4335406208815782
+Best Acc(Test):0.85
+======
+Train Epoch(109): Acc:0.8172 Prec:0.8172 Recall:0.8172 F1-score:0.8172 Loss:0.49475260687910994
+Test  Epoch(109): Acc:0.8389 Prec:0.8389 Recall:0.8389 F1-score:0.8389 Loss:0.38715646448342694
+Best Acc(Test):0.85
+======
+Train Epoch(110): Acc:0.8093 Prec:0.8093 Recall:0.8093 F1-score:0.8093 Loss:0.5024599327989246
+Test  Epoch(110): Acc:0.8611 Prec:0.8611 Recall:0.8611 F1-score:0.8611 Loss:0.40229547930800397
+Best Acc(Test):0.8611
+======
+Train Epoch(111): Acc:0.8183 Prec:0.8183 Recall:0.8183 F1-score:0.8183 Loss:0.48379400696443475
+Test  Epoch(111): Acc:0.8639 Prec:0.8639 Recall:0.8639 F1-score:0.8639 Loss:0.38307134969078976
+Best Acc(Test):0.8639
+======
+Train Epoch(112): Acc:0.8188 Prec:0.8188 Recall:0.8188 F1-score:0.8188 Loss:0.4949062247639117
+Test  Epoch(112): Acc:0.8556 Prec:0.8556 Recall:0.8556 F1-score:0.8556 Loss:0.3871629387140274
+Best Acc(Test):0.8639
+======
+Train Epoch(113): Acc:0.8243 Prec:0.8243 Recall:0.8243 F1-score:0.8243 Loss:0.4839573647664941
+Test  Epoch(113): Acc:0.8444 Prec:0.8444 Recall:0.8444 F1-score:0.8444 Loss:0.39646166692609375
+Best Acc(Test):0.8639
+======
+Train Epoch(114): Acc:0.8245 Prec:0.8245 Recall:0.8245 F1-score:0.8245 Loss:0.466765408023544
+Test  Epoch(114): Acc:0.8278 Prec:0.8278 Recall:0.8278 F1-score:0.8278 Loss:0.4203225918438124
+Best Acc(Test):0.8639
+======
+Train Epoch(115): Acc:0.83 Prec:0.83 Recall:0.83 F1-score:0.83 Loss:0.47179719883462656
+Test  Epoch(115): Acc:0.8361 Prec:0.8361 Recall:0.8361 F1-score:0.8361 Loss:0.3782853506829428
+Best Acc(Test):0.8639
+======
+Train Epoch(116): Acc:0.8223 Prec:0.8223 Recall:0.8223 F1-score:0.8223 Loss:0.4791171739930692
+Test  Epoch(116): Acc:0.8639 Prec:0.8639 Recall:0.8639 F1-score:0.8639 Loss:0.37418377302263095
+Best Acc(Test):0.8639
+======
+Train Epoch(117): Acc:0.8327 Prec:0.8327 Recall:0.8327 F1-score:0.8327 Loss:0.4540293644303861
+Test  Epoch(117): Acc:0.8083 Prec:0.8083 Recall:0.8083 F1-score:0.8083 Loss:0.45588843718818994
+Best Acc(Test):0.8639
+======
+Train Epoch(118): Acc:0.8163 Prec:0.8163 Recall:0.8163 F1-score:0.8163 Loss:0.48173248340254243
+Test  Epoch(118): Acc:0.8556 Prec:0.8556 Recall:0.8556 F1-score:0.8556 Loss:0.3448530403168305
+Best Acc(Test):0.8639
+======
+Train Epoch(119): Acc:0.8376 Prec:0.8376 Recall:0.8376 F1-score:0.8376 Loss:0.44171216423096865
+Test  Epoch(119): Acc:0.875 Prec:0.875 Recall:0.875 F1-score:0.875 Loss:0.3445548292087472
+Best Acc(Test):0.875
+======
+Train Epoch(120): Acc:0.8338 Prec:0.8338 Recall:0.8338 F1-score:0.8338 Loss:0.4573739912846814
+Test  Epoch(120): Acc:0.8361 Prec:0.8361 Recall:0.8361 F1-score:0.8361 Loss:0.40793293261009717
+Best Acc(Test):0.875
+======
+Train Epoch(121): Acc:0.8234 Prec:0.8234 Recall:0.8234 F1-score:0.8234 Loss:0.461460958486018
+Test  Epoch(121): Acc:0.8694 Prec:0.8694 Recall:0.8694 F1-score:0.8694 Loss:0.39133777858122537
+Best Acc(Test):0.875
+======
+Train Epoch(122): Acc:0.8262 Prec:0.8262 Recall:0.8262 F1-score:0.8262 Loss:0.46413668666196906
+Test  Epoch(122): Acc:0.8806 Prec:0.8806 Recall:0.8806 F1-score:0.8806 Loss:0.33637774541326193
+Best Acc(Test):0.8806
+======
+Train Epoch(123): Acc:0.8409 Prec:0.8409 Recall:0.8409 F1-score:0.8409 Loss:0.43574145889800525
+Test  Epoch(123): Acc:0.8444 Prec:0.8444 Recall:0.8444 F1-score:0.8444 Loss:0.4081797454020251
+Best Acc(Test):0.8806
+======
+Train Epoch(124): Acc:0.8319 Prec:0.8319 Recall:0.8319 F1-score:0.8319 Loss:0.4498650434872378
+Test  Epoch(124): Acc:0.8639 Prec:0.8639 Recall:0.8639 F1-score:0.8639 Loss:0.3655375120756419
+Best Acc(Test):0.8806
+======
+Train Epoch(125): Acc:0.8406 Prec:0.8406 Recall:0.8406 F1-score:0.8406 Loss:0.42884792115377346
+Test  Epoch(125): Acc:0.8806 Prec:0.8806 Recall:0.8806 F1-score:0.8806 Loss:0.32958302614481555
+Best Acc(Test):0.8806
+======
+Train Epoch(126): Acc:0.8403 Prec:0.8403 Recall:0.8403 F1-score:0.8403 Loss:0.4396192914765814
+Test  Epoch(126): Acc:0.8889 Prec:0.8889 Recall:0.8889 F1-score:0.8889 Loss:0.30780986631694046
+Best Acc(Test):0.8889
+======
+Train Epoch(127): Acc:0.8373 Prec:0.8373 Recall:0.8373 F1-score:0.8373 Loss:0.4489426588234694
+Test  Epoch(127): Acc:0.8639 Prec:0.8639 Recall:0.8639 F1-score:0.8639 Loss:0.3674257715111193
+Best Acc(Test):0.8889
+======
+Train Epoch(128): Acc:0.8335 Prec:0.8335 Recall:0.8335 F1-score:0.8335 Loss:0.44623380510703375
+Test  Epoch(128): Acc:0.8861 Prec:0.8861 Recall:0.8861 F1-score:0.8861 Loss:0.31407004789165827
+Best Acc(Test):0.8889
+======
+Train Epoch(129): Acc:0.8373 Prec:0.8373 Recall:0.8373 F1-score:0.8373 Loss:0.44688605005326476
+Test  Epoch(129): Acc:0.8722 Prec:0.8722 Recall:0.8722 F1-score:0.8722 Loss:0.3439228035833525
+Best Acc(Test):0.8889
+======
+Train Epoch(130): Acc:0.8455 Prec:0.8455 Recall:0.8455 F1-score:0.8455 Loss:0.4390822954799818
+Test  Epoch(130): Acc:0.8583 Prec:0.8583 Recall:0.8583 F1-score:0.8583 Loss:0.3594997628875401
+Best Acc(Test):0.8889
+======
+Train Epoch(131): Acc:0.8414 Prec:0.8414 Recall:0.8414 F1-score:0.8414 Loss:0.42161157183025194
+Test  Epoch(131): Acc:0.8833 Prec:0.8833 Recall:0.8833 F1-score:0.8833 Loss:0.3505869648702767
+Best Acc(Test):0.8889
+======
+Train Epoch(132): Acc:0.8466 Prec:0.8466 Recall:0.8466 F1-score:0.8466 Loss:0.4173419690002566
+Test  Epoch(132): Acc:0.8389 Prec:0.8389 Recall:0.8389 F1-score:0.8389 Loss:0.3983728574669879
+Best Acc(Test):0.8889
+======
+Train Epoch(133): Acc:0.8485 Prec:0.8485 Recall:0.8485 F1-score:0.8485 Loss:0.4360452601443166
+Test  Epoch(133): Acc:0.8972 Prec:0.8972 Recall:0.8972 F1-score:0.8972 Loss:0.2614199256767397
+Best Acc(Test):0.8972
+======
+Train Epoch(134): Acc:0.8583 Prec:0.8583 Recall:0.8583 F1-score:0.8583 Loss:0.38728756593621294
+Test  Epoch(134): Acc:0.9 Prec:0.9 Recall:0.9 F1-score:0.9 Loss:0.2648699646410735
+Best Acc(Test):0.9
+======
+Train Epoch(135): Acc:0.8496 Prec:0.8496 Recall:0.8496 F1-score:0.8496 Loss:0.4148850475964339
+Test  Epoch(135): Acc:0.8972 Prec:0.8972 Recall:0.8972 F1-score:0.8972 Loss:0.2998840293806532
+Best Acc(Test):0.9
+======
+Train Epoch(136): Acc:0.854 Prec:0.854 Recall:0.854 F1-score:0.854 Loss:0.3996724061343981
+Test  Epoch(136): Acc:0.8222 Prec:0.8222 Recall:0.8222 F1-score:0.8222 Loss:0.45499710544295935
+Best Acc(Test):0.9
+======
+Train Epoch(137): Acc:0.8504 Prec:0.8504 Recall:0.8504 F1-score:0.8504 Loss:0.41359360159739206
+Test  Epoch(137): Acc:0.8639 Prec:0.8639 Recall:0.8639 F1-score:0.8639 Loss:0.37358213620989217
+Best Acc(Test):0.9
+======
+Train Epoch(138): Acc:0.8477 Prec:0.8477 Recall:0.8477 F1-score:0.8477 Loss:0.41367428769236025
+Test  Epoch(138): Acc:0.8861 Prec:0.8861 Recall:0.8861 F1-score:0.8861 Loss:0.30233171120609925
+Best Acc(Test):0.9
+======
+Train Epoch(139): Acc:0.8463 Prec:0.8463 Recall:0.8463 F1-score:0.8463 Loss:0.41360638906126435
+Test  Epoch(139): Acc:0.8972 Prec:0.8972 Recall:0.8972 F1-score:0.8972 Loss:0.267933101757713
+Best Acc(Test):0.9
+======
+Train Epoch(140): Acc:0.8499 Prec:0.8499 Recall:0.8499 F1-score:0.8499 Loss:0.4007015163483827
+Test  Epoch(140): Acc:0.8694 Prec:0.8694 Recall:0.8694 F1-score:0.8694 Loss:0.3484777801710626
+Best Acc(Test):0.9
+======
+Train Epoch(141): Acc:0.8518 Prec:0.8518 Recall:0.8518 F1-score:0.8518 Loss:0.41340008157750835
+Test  Epoch(141): Acc:0.8361 Prec:0.8361 Recall:0.8361 F1-score:0.8361 Loss:0.4353545742190402
+Best Acc(Test):0.9
+======
+Train Epoch(142): Acc:0.8485 Prec:0.8485 Recall:0.8485 F1-score:0.8485 Loss:0.4010620246762815
+Test  Epoch(142): Acc:0.8944 Prec:0.8944 Recall:0.8944 F1-score:0.8944 Loss:0.2845995353291864
+Best Acc(Test):0.9
+======
+Train Epoch(143): Acc:0.8529 Prec:0.8529 Recall:0.8529 F1-score:0.8529 Loss:0.4129636053157889
+Test  Epoch(143): Acc:0.8833 Prec:0.8833 Recall:0.8833 F1-score:0.8833 Loss:0.3066242069977781
+Best Acc(Test):0.9
+======
+Train Epoch(144): Acc:0.851 Prec:0.851 Recall:0.851 F1-score:0.851 Loss:0.3960072299708491
+Test  Epoch(144): Acc:0.8611 Prec:0.8611 Recall:0.8611 F1-score:0.8611 Loss:0.3813155215719472
+Best Acc(Test):0.9
+======
+Train Epoch(145): Acc:0.8578 Prec:0.8578 Recall:0.8578 F1-score:0.8578 Loss:0.4063183705443921
+Test  Epoch(145): Acc:0.8694 Prec:0.8694 Recall:0.8694 F1-score:0.8694 Loss:0.2978532359651897
+Best Acc(Test):0.9
+======
+Train Epoch(146): Acc:0.8586 Prec:0.8586 Recall:0.8586 F1-score:0.8586 Loss:0.37900128610756084
+Test  Epoch(146): Acc:0.8917 Prec:0.8917 Recall:0.8917 F1-score:0.8917 Loss:0.29362250184235367
+Best Acc(Test):0.9
+======
+Train Epoch(147): Acc:0.8589 Prec:0.8589 Recall:0.8589 F1-score:0.8589 Loss:0.3905964853970901
+Test  Epoch(147): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.2192094586789608
+Best Acc(Test):0.925
+======
+Train Epoch(148): Acc:0.8534 Prec:0.8534 Recall:0.8534 F1-score:0.8534 Loss:0.39634718992139983
+Test  Epoch(148): Acc:0.9 Prec:0.9 Recall:0.9 F1-score:0.9 Loss:0.29382732478172885
+Best Acc(Test):0.925
+======
+Train Epoch(149): Acc:0.8698 Prec:0.8698 Recall:0.8698 F1-score:0.8698 Loss:0.3772347664055617
+Test  Epoch(149): Acc:0.9361 Prec:0.9361 Recall:0.9361 F1-score:0.9361 Loss:0.2098379784628101
+Best Acc(Test):0.9361
+======
+Train Epoch(150): Acc:0.8602 Prec:0.8602 Recall:0.8602 F1-score:0.8602 Loss:0.37631100319001987
+Test  Epoch(150): Acc:0.8917 Prec:0.8917 Recall:0.8917 F1-score:0.8917 Loss:0.31359801328052644
+Best Acc(Test):0.9361
+======
+Train Epoch(151): Acc:0.8684 Prec:0.8684 Recall:0.8684 F1-score:0.8684 Loss:0.372177554666996
+Test  Epoch(151): Acc:0.8972 Prec:0.8972 Recall:0.8972 F1-score:0.8972 Loss:0.30675602477529773
+Best Acc(Test):0.9361
+======
+Train Epoch(152): Acc:0.8561 Prec:0.8561 Recall:0.8561 F1-score:0.8561 Loss:0.3968454862418382
+Test  Epoch(152): Acc:0.8889 Prec:0.8889 Recall:0.8889 F1-score:0.8889 Loss:0.3232507195485675
+Best Acc(Test):0.9361
+======
+Train Epoch(153): Acc:0.8632 Prec:0.8632 Recall:0.8632 F1-score:0.8632 Loss:0.38371201326017795
+Test  Epoch(153): Acc:0.9333 Prec:0.9333 Recall:0.9333 F1-score:0.9333 Loss:0.2122680554571359
+Best Acc(Test):0.9361
+======
+Train Epoch(154): Acc:0.87 Prec:0.87 Recall:0.87 F1-score:0.87 Loss:0.35300815844017525
+Test  Epoch(154): Acc:0.8778 Prec:0.8778 Recall:0.8778 F1-score:0.8778 Loss:0.3261036950608958
+Best Acc(Test):0.9361
+======
+Train Epoch(155): Acc:0.8602 Prec:0.8602 Recall:0.8602 F1-score:0.8602 Loss:0.3790066755336264
+Test  Epoch(155): Acc:0.9056 Prec:0.9056 Recall:0.9056 F1-score:0.9056 Loss:0.2633993136494056
+Best Acc(Test):0.9361
+======
+Train Epoch(156): Acc:0.8768 Prec:0.8768 Recall:0.8768 F1-score:0.8768 Loss:0.3452716332414876
+Test  Epoch(156): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.233407662452563
+Best Acc(Test):0.9361
+======
+Train Epoch(157): Acc:0.8689 Prec:0.8689 Recall:0.8689 F1-score:0.8689 Loss:0.3552079815255559
+Test  Epoch(157): Acc:0.9083 Prec:0.9083 Recall:0.9083 F1-score:0.9083 Loss:0.24730069206460661
+Best Acc(Test):0.9361
+======
+Train Epoch(158): Acc:0.8766 Prec:0.8766 Recall:0.8766 F1-score:0.8766 Loss:0.3558142858354942
+Test  Epoch(158): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.23048018550743227
+Best Acc(Test):0.9361
+======
+Train Epoch(159): Acc:0.8646 Prec:0.8646 Recall:0.8646 F1-score:0.8646 Loss:0.3710213425366775
+Test  Epoch(159): Acc:0.9 Prec:0.9 Recall:0.9 F1-score:0.9 Loss:0.25586292633543845
+Best Acc(Test):0.9361
+======
+Train Epoch(160): Acc:0.8692 Prec:0.8692 Recall:0.8692 F1-score:0.8692 Loss:0.3630123415718908
+Test  Epoch(160): Acc:0.9111 Prec:0.9111 Recall:0.9111 F1-score:0.9111 Loss:0.26189518655123917
+Best Acc(Test):0.9361
+======
+Train Epoch(161): Acc:0.8638 Prec:0.8638 Recall:0.8638 F1-score:0.8638 Loss:0.3607264137786368
+Test  Epoch(161): Acc:0.9 Prec:0.9 Recall:0.9 F1-score:0.9 Loss:0.2629694128813951
+Best Acc(Test):0.9361
+======
+Train Epoch(162): Acc:0.8668 Prec:0.8668 Recall:0.8668 F1-score:0.8668 Loss:0.36873406171798706
+Test  Epoch(162): Acc:0.875 Prec:0.875 Recall:0.875 F1-score:0.875 Loss:0.31599512437115546
+Best Acc(Test):0.9361
+======
+Train Epoch(163): Acc:0.8706 Prec:0.8706 Recall:0.8706 F1-score:0.8706 Loss:0.34931434856160826
+Test  Epoch(163): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.2446412802066492
+Best Acc(Test):0.9361
+======
+Train Epoch(164): Acc:0.8708 Prec:0.8708 Recall:0.8708 F1-score:0.8708 Loss:0.3660442537587622
+Test  Epoch(164): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.2515885489790336
+Best Acc(Test):0.9361
+======
+Train Epoch(165): Acc:0.8728 Prec:0.8728 Recall:0.8728 F1-score:0.8728 Loss:0.34433946447527924
+Test  Epoch(165): Acc:0.875 Prec:0.875 Recall:0.875 F1-score:0.875 Loss:0.3374814770143965
+Best Acc(Test):0.9361
+======
+Train Epoch(166): Acc:0.8689 Prec:0.8689 Recall:0.8689 F1-score:0.8689 Loss:0.35667654560959855
+Test  Epoch(166): Acc:0.8944 Prec:0.8944 Recall:0.8944 F1-score:0.8944 Loss:0.30978389991366345
+Best Acc(Test):0.9361
+======
+Train Epoch(167): Acc:0.8812 Prec:0.8812 Recall:0.8812 F1-score:0.8812 Loss:0.3465508345676505
+Test  Epoch(167): Acc:0.9028 Prec:0.9028 Recall:0.9028 F1-score:0.9028 Loss:0.27152560513628565
+Best Acc(Test):0.9361
+======
+Train Epoch(168): Acc:0.876 Prec:0.876 Recall:0.876 F1-score:0.876 Loss:0.34135261676881623
+Test  Epoch(168): Acc:0.9167 Prec:0.9167 Recall:0.9167 F1-score:0.9167 Loss:0.23101876773264096
+Best Acc(Test):0.9361
+======
+Train Epoch(169): Acc:0.8907 Prec:0.8907 Recall:0.8907 F1-score:0.8907 Loss:0.3060759322150894
+Test  Epoch(169): Acc:0.9306 Prec:0.9306 Recall:0.9306 F1-score:0.9306 Loss:0.22081400389256683
+Best Acc(Test):0.9361
+======
+Train Epoch(170): Acc:0.8869 Prec:0.8869 Recall:0.8869 F1-score:0.8869 Loss:0.3162947579894377
+Test  Epoch(170): Acc:0.8917 Prec:0.8917 Recall:0.8917 F1-score:0.8917 Loss:0.31199740845224133
+Best Acc(Test):0.9361
+======
+Train Epoch(171): Acc:0.8817 Prec:0.8817 Recall:0.8817 F1-score:0.8817 Loss:0.33638995270366256
+Test  Epoch(171): Acc:0.8972 Prec:0.8972 Recall:0.8972 F1-score:0.8972 Loss:0.3013282787540685
+Best Acc(Test):0.9361
+======
+Train Epoch(172): Acc:0.885 Prec:0.885 Recall:0.885 F1-score:0.885 Loss:0.32301290216653245
+Test  Epoch(172): Acc:0.9167 Prec:0.9167 Recall:0.9167 F1-score:0.9167 Loss:0.22321853041648865
+Best Acc(Test):0.9361
+======
+Train Epoch(173): Acc:0.8809 Prec:0.8809 Recall:0.8809 F1-score:0.8809 Loss:0.32943380798982536
+Test  Epoch(173): Acc:0.9306 Prec:0.9306 Recall:0.9306 F1-score:0.9306 Loss:0.23200788170747136
+Best Acc(Test):0.9361
+======
+Train Epoch(174): Acc:0.876 Prec:0.876 Recall:0.876 F1-score:0.876 Loss:0.334855993869512
+Test  Epoch(174): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.16870994023654773
+Best Acc(Test):0.9472
+======
+Train Epoch(175): Acc:0.8899 Prec:0.8899 Recall:0.8899 F1-score:0.8899 Loss:0.31314182634586873
+Test  Epoch(175): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.16597860517061275
+Best Acc(Test):0.9472
+======
+Train Epoch(176): Acc:0.8875 Prec:0.8875 Recall:0.8875 F1-score:0.8875 Loss:0.3172067935700002
+Test  Epoch(176): Acc:0.8972 Prec:0.8972 Recall:0.8972 F1-score:0.8972 Loss:0.2610875083052594
+Best Acc(Test):0.9472
+======
+Train Epoch(177): Acc:0.8907 Prec:0.8907 Recall:0.8907 F1-score:0.8907 Loss:0.30513590347507724
+Test  Epoch(177): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.21175401204306146
+Best Acc(Test):0.9472
+======
+Train Epoch(178): Acc:0.8793 Prec:0.8793 Recall:0.8793 F1-score:0.8793 Loss:0.33299226294393125
+Test  Epoch(178): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.22931190547735794
+Best Acc(Test):0.9472
+======
+Train Epoch(179): Acc:0.897 Prec:0.897 Recall:0.897 F1-score:0.897 Loss:0.29831828462040944
+Test  Epoch(179): Acc:0.9167 Prec:0.9167 Recall:0.9167 F1-score:0.9167 Loss:0.21166623237988222
+Best Acc(Test):0.9472
+======
+Train Epoch(180): Acc:0.8826 Prec:0.8826 Recall:0.8826 F1-score:0.8826 Loss:0.31721807627574256
+Test  Epoch(180): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.21113728100190993
+Best Acc(Test):0.9472
+======
+Train Epoch(181): Acc:0.8864 Prec:0.8864 Recall:0.8864 F1-score:0.8864 Loss:0.30477822584950404
+Test  Epoch(181): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.11976207817054313
+Best Acc(Test):0.9583
+======
+Train Epoch(182): Acc:0.8858 Prec:0.8858 Recall:0.8858 F1-score:0.8858 Loss:0.301812017287897
+Test  Epoch(182): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.1400087662851033
+Best Acc(Test):0.9583
+======
+Train Epoch(183): Acc:0.8864 Prec:0.8864 Recall:0.8864 F1-score:0.8864 Loss:0.31342321371902593
+Test  Epoch(183): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.17089107090040392
+Best Acc(Test):0.9583
+======
+Train Epoch(184): Acc:0.8815 Prec:0.8815 Recall:0.8815 F1-score:0.8815 Loss:0.3274155601211216
+Test  Epoch(184): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.26547607617533725
+Best Acc(Test):0.9583
+======
+Train Epoch(185): Acc:0.891 Prec:0.891 Recall:0.891 F1-score:0.891 Loss:0.3131198089407838
+Test  Epoch(185): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.19390229621659155
+Best Acc(Test):0.9583
+======
+Train Epoch(186): Acc:0.8948 Prec:0.8948 Recall:0.8948 F1-score:0.8948 Loss:0.3051420481956523
+Test  Epoch(186): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.18685722010939018
+Best Acc(Test):0.9583
+======
+Train Epoch(187): Acc:0.8875 Prec:0.8875 Recall:0.8875 F1-score:0.8875 Loss:0.3042396950980891
+Test  Epoch(187): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.1537258561052706
+Best Acc(Test):0.9583
+======
+Train Epoch(188): Acc:0.8965 Prec:0.8965 Recall:0.8965 F1-score:0.8965 Loss:0.2839206458757753
+Test  Epoch(188): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.16109698249594026
+Best Acc(Test):0.9583
+======
+Train Epoch(189): Acc:0.8951 Prec:0.8951 Recall:0.8951 F1-score:0.8951 Loss:0.28972571061357205
+Test  Epoch(189): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.17665916130594586
+Best Acc(Test):0.9583
+======
+Train Epoch(190): Acc:0.8907 Prec:0.8907 Recall:0.8907 F1-score:0.8907 Loss:0.2973660395197246
+Test  Epoch(190): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.17723601554398952
+Best Acc(Test):0.9583
+======
+Train Epoch(191): Acc:0.8959 Prec:0.8959 Recall:0.8959 F1-score:0.8959 Loss:0.30156168270370237
+Test  Epoch(191): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.13797391206026077
+Best Acc(Test):0.9583
+======
+Train Epoch(192): Acc:0.8894 Prec:0.8894 Recall:0.8894 F1-score:0.8894 Loss:0.31900328203387884
+Test  Epoch(192): Acc:0.9111 Prec:0.9111 Recall:0.9111 F1-score:0.9111 Loss:0.21344296642295693
+Best Acc(Test):0.9583
+======
+Train Epoch(193): Acc:0.9052 Prec:0.9052 Recall:0.9052 F1-score:0.9052 Loss:0.2783265085647935
+Test  Epoch(193): Acc:0.9167 Prec:0.9167 Recall:0.9167 F1-score:0.9167 Loss:0.2032505890921406
+Best Acc(Test):0.9583
+======
+Train Epoch(194): Acc:0.8905 Prec:0.8905 Recall:0.8905 F1-score:0.8905 Loss:0.3033114121336004
+Test  Epoch(194): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.15044084312799183
+Best Acc(Test):0.9583
+======
+Train Epoch(195): Acc:0.903 Prec:0.903 Recall:0.903 F1-score:0.903 Loss:0.27826097128183946
+Test  Epoch(195): Acc:0.9194 Prec:0.9194 Recall:0.9194 F1-score:0.9194 Loss:0.1899173952963041
+Best Acc(Test):0.9583
+======
+Train Epoch(196): Acc:0.897 Prec:0.897 Recall:0.897 F1-score:0.897 Loss:0.29363915654628175
+Test  Epoch(196): Acc:0.9222 Prec:0.9222 Recall:0.9222 F1-score:0.9222 Loss:0.2575147926159527
+Best Acc(Test):0.9583
+======
+Train Epoch(197): Acc:0.8997 Prec:0.8997 Recall:0.8997 F1-score:0.8997 Loss:0.28864312217287397
+Test  Epoch(197): Acc:0.9333 Prec:0.9333 Recall:0.9333 F1-score:0.9333 Loss:0.15833323967197668
+Best Acc(Test):0.9583
+======
+Train Epoch(198): Acc:0.9 Prec:0.9 Recall:0.9 F1-score:0.9 Loss:0.2835677095081495
+Test  Epoch(198): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.1615810504426127
+Best Acc(Test):0.9583
+======
+Train Epoch(199): Acc:0.8956 Prec:0.8956 Recall:0.8956 F1-score:0.8956 Loss:0.28608820762323295
+Test  Epoch(199): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.1483158414940471
+Best Acc(Test):0.9583
+======
+Train Epoch(200): Acc:0.8946 Prec:0.8946 Recall:0.8946 F1-score:0.8946 Loss:0.2976496818272964
+Test  Epoch(200): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.14693101009596948
+Best Acc(Test):0.9583
+======
+Train Epoch(201): Acc:0.912 Prec:0.912 Recall:0.912 F1-score:0.912 Loss:0.2543995710494726
+Test  Epoch(201): Acc:0.9083 Prec:0.9083 Recall:0.9083 F1-score:0.9083 Loss:0.23347010584953037
+Best Acc(Test):0.9583
+======
+Train Epoch(202): Acc:0.8997 Prec:0.8997 Recall:0.8997 F1-score:0.8997 Loss:0.2792720505400844
+Test  Epoch(202): Acc:0.9361 Prec:0.9361 Recall:0.9361 F1-score:0.9361 Loss:0.15562026656192282
+Best Acc(Test):0.9583
+======
+Train Epoch(203): Acc:0.8954 Prec:0.8954 Recall:0.8954 F1-score:0.8954 Loss:0.2810784847192142
+Test  Epoch(203): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.13310089533257743
+Best Acc(Test):0.9583
+======
+Train Epoch(204): Acc:0.903 Prec:0.903 Recall:0.903 F1-score:0.903 Loss:0.28200328797101976
+Test  Epoch(204): Acc:0.9306 Prec:0.9306 Recall:0.9306 F1-score:0.9306 Loss:0.21815194634963636
+Best Acc(Test):0.9583
+======
+Train Epoch(205): Acc:0.9049 Prec:0.9049 Recall:0.9049 F1-score:0.9049 Loss:0.27742023791955867
+Test  Epoch(205): Acc:0.9333 Prec:0.9333 Recall:0.9333 F1-score:0.9333 Loss:0.21075825587562894
+Best Acc(Test):0.9583
+======
+Train Epoch(206): Acc:0.8995 Prec:0.8995 Recall:0.8995 F1-score:0.8995 Loss:0.28438315006053966
+Test  Epoch(206): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.1671755528887329
+Best Acc(Test):0.9583
+======
+Train Epoch(207): Acc:0.9155 Prec:0.9155 Recall:0.9155 F1-score:0.9155 Loss:0.2505455448575642
+Test  Epoch(207): Acc:0.9361 Prec:0.9361 Recall:0.9361 F1-score:0.9361 Loss:0.16049392816975064
+Best Acc(Test):0.9583
+======
+Train Epoch(208): Acc:0.9065 Prec:0.9065 Recall:0.9065 F1-score:0.9065 Loss:0.27236446974718054
+Test  Epoch(208): Acc:0.9194 Prec:0.9194 Recall:0.9194 F1-score:0.9194 Loss:0.22817894360860405
+Best Acc(Test):0.9583
+======
+Train Epoch(209): Acc:0.9082 Prec:0.9082 Recall:0.9082 F1-score:0.9082 Loss:0.2770497316899507
+Test  Epoch(209): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.15061346109470594
+Best Acc(Test):0.9583
+======
+Train Epoch(210): Acc:0.9044 Prec:0.9044 Recall:0.9044 F1-score:0.9044 Loss:0.2801642040519611
+Test  Epoch(210): Acc:0.9333 Prec:0.9333 Recall:0.9333 F1-score:0.9333 Loss:0.18789834213321624
+Best Acc(Test):0.9583
+======
+Train Epoch(211): Acc:0.9033 Prec:0.9033 Recall:0.9033 F1-score:0.9033 Loss:0.2820127802050632
+Test  Epoch(211): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.16400876916621043
+Best Acc(Test):0.9583
+======
+Train Epoch(212): Acc:0.9076 Prec:0.9076 Recall:0.9076 F1-score:0.9076 Loss:0.26482680870786957
+Test  Epoch(212): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.1470314920272516
+Best Acc(Test):0.9583
+======
+Train Epoch(213): Acc:0.9144 Prec:0.9144 Recall:0.9144 F1-score:0.9144 Loss:0.25421184405036595
+Test  Epoch(213): Acc:0.9278 Prec:0.9278 Recall:0.9278 F1-score:0.9278 Loss:0.19708303580789463
+Best Acc(Test):0.9583
+======
+Train Epoch(214): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.24358328386493353
+Test  Epoch(214): Acc:0.9333 Prec:0.9333 Recall:0.9333 F1-score:0.9333 Loss:0.17861345183590185
+Best Acc(Test):0.9583
+======
+Train Epoch(215): Acc:0.909 Prec:0.909 Recall:0.909 F1-score:0.909 Loss:0.2636473600955113
+Test  Epoch(215): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.14138145153613194
+Best Acc(Test):0.9583
+======
+Train Epoch(216): Acc:0.9082 Prec:0.9082 Recall:0.9082 F1-score:0.9082 Loss:0.26275255832335226
+Test  Epoch(216): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.12323991517009943
+Best Acc(Test):0.9639
+======
+Train Epoch(217): Acc:0.9183 Prec:0.9183 Recall:0.9183 F1-score:0.9183 Loss:0.23378753402958746
+Test  Epoch(217): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.17007708703370197
+Best Acc(Test):0.9639
+======
+Train Epoch(218): Acc:0.9054 Prec:0.9054 Recall:0.9054 F1-score:0.9054 Loss:0.2595745076951773
+Test  Epoch(218): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.11871102571730381
+Best Acc(Test):0.9639
+======
+Train Epoch(219): Acc:0.9106 Prec:0.9106 Recall:0.9106 F1-score:0.9106 Loss:0.2586405044016631
+Test  Epoch(219): Acc:0.9222 Prec:0.9222 Recall:0.9222 F1-score:0.9222 Loss:0.17777417679114835
+Best Acc(Test):0.9639
+======
+Train Epoch(220): Acc:0.8975 Prec:0.8975 Recall:0.8975 F1-score:0.8975 Loss:0.28966370736775193
+Test  Epoch(220): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.1661898633060248
+Best Acc(Test):0.9639
+======
+Train Epoch(221): Acc:0.9125 Prec:0.9125 Recall:0.9125 F1-score:0.9125 Loss:0.2427759143807318
+Test  Epoch(221): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.12935485188727794
+Best Acc(Test):0.9639
+======
+Train Epoch(222): Acc:0.9112 Prec:0.9112 Recall:0.9112 F1-score:0.9112 Loss:0.24893983696465907
+Test  Epoch(222): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.1468033495804538
+Best Acc(Test):0.9639
+======
+Train Epoch(223): Acc:0.9046 Prec:0.9046 Recall:0.9046 F1-score:0.9046 Loss:0.2705025597434977
+Test  Epoch(223): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.1280683910717135
+Best Acc(Test):0.9639
+======
+Train Epoch(224): Acc:0.9188 Prec:0.9188 Recall:0.9188 F1-score:0.9188 Loss:0.23066244332686714
+Test  Epoch(224): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.14564207228629486
+Best Acc(Test):0.9639
+======
+Train Epoch(225): Acc:0.9163 Prec:0.9163 Recall:0.9163 F1-score:0.9163 Loss:0.23956874217028204
+Test  Epoch(225): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.13557305251774582
+Best Acc(Test):0.9639
+======
+Train Epoch(226): Acc:0.9147 Prec:0.9147 Recall:0.9147 F1-score:0.9147 Loss:0.24249755879459173
+Test  Epoch(226): Acc:0.9306 Prec:0.9306 Recall:0.9306 F1-score:0.9306 Loss:0.20125087949892748
+Best Acc(Test):0.9639
+======
+Train Epoch(227): Acc:0.9128 Prec:0.9128 Recall:0.9128 F1-score:0.9128 Loss:0.2494325386279303
+Test  Epoch(227): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.14343185188329738
+Best Acc(Test):0.9639
+======
+Train Epoch(228): Acc:0.9114 Prec:0.9114 Recall:0.9114 F1-score:0.9114 Loss:0.24457305352325026
+Test  Epoch(228): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.15720684194694395
+Best Acc(Test):0.9639
+======
+Train Epoch(229): Acc:0.9114 Prec:0.9114 Recall:0.9114 F1-score:0.9114 Loss:0.2475929578361304
+Test  Epoch(229): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.11161815865046304
+Best Acc(Test):0.9639
+======
+Train Epoch(230): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.2353654425105323
+Test  Epoch(230): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.1491726837930796
+Best Acc(Test):0.9639
+======
+Train Epoch(231): Acc:0.9134 Prec:0.9134 Recall:0.9134 F1-score:0.9134 Loss:0.2392783940486286
+Test  Epoch(231): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.1537381109336148
+Best Acc(Test):0.9639
+======
+Train Epoch(232): Acc:0.9185 Prec:0.9185 Recall:0.9185 F1-score:0.9185 Loss:0.2295280939211016
+Test  Epoch(232): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.14151923388809615
+Best Acc(Test):0.9639
+======
+Train Epoch(233): Acc:0.9008 Prec:0.9008 Recall:0.9008 F1-score:0.9008 Loss:0.2695745888611545
+Test  Epoch(233): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.12444516028399052
+Best Acc(Test):0.9639
+======
+Train Epoch(234): Acc:0.9196 Prec:0.9196 Recall:0.9196 F1-score:0.9196 Loss:0.2408828914489435
+Test  Epoch(234): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.14129444535659708
+Best Acc(Test):0.9639
+======
+Train Epoch(235): Acc:0.9169 Prec:0.9169 Recall:0.9169 F1-score:0.9169 Loss:0.22805023180401843
+Test  Epoch(235): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.14529000911051812
+Best Acc(Test):0.9639
+======
+Train Epoch(236): Acc:0.9136 Prec:0.9136 Recall:0.9136 F1-score:0.9136 Loss:0.23425758652712989
+Test  Epoch(236): Acc:0.9611 Prec:0.9611 Recall:0.9611 F1-score:0.9611 Loss:0.13256267020883766
+Best Acc(Test):0.9639
+======
+Train Epoch(237): Acc:0.9155 Prec:0.9155 Recall:0.9155 F1-score:0.9155 Loss:0.2463872096784737
+Test  Epoch(237): Acc:0.925 Prec:0.925 Recall:0.925 F1-score:0.925 Loss:0.17958105671341004
+Best Acc(Test):0.9639
+======
+Train Epoch(238): Acc:0.9188 Prec:0.9188 Recall:0.9188 F1-score:0.9188 Loss:0.2209551607137141
+Test  Epoch(238): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.14045194797622768
+Best Acc(Test):0.9639
+======
+Train Epoch(239): Acc:0.9183 Prec:0.9183 Recall:0.9183 F1-score:0.9183 Loss:0.23844347142654918
+Test  Epoch(239): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.16374873944922633
+Best Acc(Test):0.9639
+======
+Train Epoch(240): Acc:0.9134 Prec:0.9134 Recall:0.9134 F1-score:0.9134 Loss:0.241494551398184
+Test  Epoch(240): Acc:0.9194 Prec:0.9194 Recall:0.9194 F1-score:0.9194 Loss:0.20541395295573317
+Best Acc(Test):0.9639
+======
+Train Epoch(241): Acc:0.9114 Prec:0.9114 Recall:0.9114 F1-score:0.9114 Loss:0.25125681119768517
+Test  Epoch(241): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.1783422042777681
+Best Acc(Test):0.9639
+======
+Train Epoch(242): Acc:0.9142 Prec:0.9142 Recall:0.9142 F1-score:0.9142 Loss:0.24351623848728512
+Test  Epoch(242): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.1360022400951256
+Best Acc(Test):0.9639
+======
+Train Epoch(243): Acc:0.9262 Prec:0.9262 Recall:0.9262 F1-score:0.9262 Loss:0.21848904477513353
+Test  Epoch(243): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.13212955722828273
+Best Acc(Test):0.9639
+======
+Train Epoch(244): Acc:0.9166 Prec:0.9166 Recall:0.9166 F1-score:0.9166 Loss:0.24300660967178966
+Test  Epoch(244): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.14419166606081568
+Best Acc(Test):0.9639
+======
+Train Epoch(245): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.2450651509768289
+Test  Epoch(245): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.13787140316613342
+Best Acc(Test):0.9639
+======
+Train Epoch(246): Acc:0.9158 Prec:0.9158 Recall:0.9158 F1-score:0.9158 Loss:0.2501196651031142
+Test  Epoch(246): Acc:0.9194 Prec:0.9194 Recall:0.9194 F1-score:0.9194 Loss:0.24098594357138095
+Best Acc(Test):0.9639
+======
+Train Epoch(247): Acc:0.9084 Prec:0.9084 Recall:0.9084 F1-score:0.9084 Loss:0.24111325578845066
+Test  Epoch(247): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.1487303398468572
+Best Acc(Test):0.9639
+======
+Train Epoch(248): Acc:0.9281 Prec:0.9281 Recall:0.9281 F1-score:0.9281 Loss:0.2007769578176996
+Test  Epoch(248): Acc:0.9306 Prec:0.9306 Recall:0.9306 F1-score:0.9306 Loss:0.23701451767397963
+Best Acc(Test):0.9639
+======
+Train Epoch(249): Acc:0.9193 Prec:0.9193 Recall:0.9193 F1-score:0.9193 Loss:0.24296228150310722
+Test  Epoch(249): Acc:0.9667 Prec:0.9667 Recall:0.9667 F1-score:0.9667 Loss:0.11976330921701762
+Best Acc(Test):0.9667
+======
+Train Epoch(250): Acc:0.9215 Prec:0.9215 Recall:0.9215 F1-score:0.9215 Loss:0.22862119285956672
+Test  Epoch(250): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.15421445440986883
+Best Acc(Test):0.9667
+======
+Train Epoch(251): Acc:0.9215 Prec:0.9215 Recall:0.9215 F1-score:0.9215 Loss:0.22526423150430555
+Test  Epoch(251): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.15537724465779637
+Best Acc(Test):0.9667
+======
+Train Epoch(252): Acc:0.9161 Prec:0.9161 Recall:0.9161 F1-score:0.9161 Loss:0.25357028194095776
+Test  Epoch(252): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.1204436759504935
+Best Acc(Test):0.9667
+======
+Train Epoch(253): Acc:0.9272 Prec:0.9272 Recall:0.9272 F1-score:0.9272 Loss:0.21218384625795095
+Test  Epoch(253): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.12197610043475161
+Best Acc(Test):0.9667
+======
+Train Epoch(254): Acc:0.9229 Prec:0.9229 Recall:0.9229 F1-score:0.9229 Loss:0.22667512359178585
+Test  Epoch(254): Acc:0.9722 Prec:0.9722 Recall:0.9722 F1-score:0.9722 Loss:0.0888038894728474
+Best Acc(Test):0.9722
+======
+Train Epoch(255): Acc:0.918 Prec:0.918 Recall:0.918 F1-score:0.918 Loss:0.22415006204467752
+Test  Epoch(255): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.11615383825467332
+Best Acc(Test):0.9722
+======
+Train Epoch(256): Acc:0.9139 Prec:0.9139 Recall:0.9139 F1-score:0.9139 Loss:0.24650462985686633
+Test  Epoch(256): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.15506743534427622
+Best Acc(Test):0.9722
+======
+Train Epoch(257): Acc:0.9185 Prec:0.9185 Recall:0.9185 F1-score:0.9185 Loss:0.23232420344391594
+Test  Epoch(257): Acc:0.9611 Prec:0.9611 Recall:0.9611 F1-score:0.9611 Loss:0.1309586033710967
+Best Acc(Test):0.9722
+======
+Train Epoch(258): Acc:0.9275 Prec:0.9275 Recall:0.9275 F1-score:0.9275 Loss:0.21104010465028494
+Test  Epoch(258): Acc:0.9194 Prec:0.9194 Recall:0.9194 F1-score:0.9194 Loss:0.21094158469982768
+Best Acc(Test):0.9722
+======
+Train Epoch(259): Acc:0.9174 Prec:0.9174 Recall:0.9174 F1-score:0.9174 Loss:0.23651762415209543
+Test  Epoch(259): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.12666854651077933
+Best Acc(Test):0.9722
+======
+Train Epoch(260): Acc:0.9248 Prec:0.9248 Recall:0.9248 F1-score:0.9248 Loss:0.20723200595897176
+Test  Epoch(260): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.13793637753342805
+Best Acc(Test):0.9722
+======
+Train Epoch(261): Acc:0.9136 Prec:0.9136 Recall:0.9136 F1-score:0.9136 Loss:0.23217214284383733
+Test  Epoch(261): Acc:0.9667 Prec:0.9667 Recall:0.9667 F1-score:0.9667 Loss:0.12750021866320269
+Best Acc(Test):0.9722
+======
+Train Epoch(262): Acc:0.9155 Prec:0.9155 Recall:0.9155 F1-score:0.9155 Loss:0.24479052910338278
+Test  Epoch(262): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.11761182481827943
+Best Acc(Test):0.9722
+======
+Train Epoch(263): Acc:0.9256 Prec:0.9256 Recall:0.9256 F1-score:0.9256 Loss:0.22379595044514408
+Test  Epoch(263): Acc:0.9722 Prec:0.9722 Recall:0.9722 F1-score:0.9722 Loss:0.08802495625517938
+Best Acc(Test):0.9722
+======
+Train Epoch(264): Acc:0.9213 Prec:0.9213 Recall:0.9213 F1-score:0.9213 Loss:0.23560182633607285
+Test  Epoch(264): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.1418844206744562
+Best Acc(Test):0.9722
+======
+Train Epoch(265): Acc:0.9259 Prec:0.9259 Recall:0.9259 F1-score:0.9259 Loss:0.21990047353117362
+Test  Epoch(265): Acc:0.9444 Prec:0.9444 Recall:0.9444 F1-score:0.9444 Loss:0.15259843983727953
+Best Acc(Test):0.9722
+======
+Train Epoch(266): Acc:0.9294 Prec:0.9294 Recall:0.9294 F1-score:0.9294 Loss:0.20458781864979994
+Test  Epoch(266): Acc:0.9417 Prec:0.9417 Recall:0.9417 F1-score:0.9417 Loss:0.16848118570835693
+Best Acc(Test):0.9722
+======
+Train Epoch(267): Acc:0.9245 Prec:0.9245 Recall:0.9245 F1-score:0.9245 Loss:0.2244903231444566
+Test  Epoch(267): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.12090583186110725
+Best Acc(Test):0.9722
+======
+Train Epoch(268): Acc:0.9256 Prec:0.9256 Recall:0.9256 F1-score:0.9256 Loss:0.21644716721190058
+Test  Epoch(268): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.11647785472197701
+Best Acc(Test):0.9722
+======
+Train Epoch(269): Acc:0.9283 Prec:0.9283 Recall:0.9283 F1-score:0.9283 Loss:0.21787593873298686
+Test  Epoch(269): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.15013688628602287
+Best Acc(Test):0.9722
+======
+Train Epoch(270): Acc:0.9278 Prec:0.9278 Recall:0.9278 F1-score:0.9278 Loss:0.20643795302704623
+Test  Epoch(270): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.12468280647273945
+Best Acc(Test):0.9722
+======
+Train Epoch(271): Acc:0.9262 Prec:0.9262 Recall:0.9262 F1-score:0.9262 Loss:0.2202087526412114
+Test  Epoch(271): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.1029687071138102
+Best Acc(Test):0.9722
+======
+Train Epoch(272): Acc:0.9117 Prec:0.9117 Recall:0.9117 F1-score:0.9117 Loss:0.23591287398467894
+Test  Epoch(272): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.10419251356759797
+Best Acc(Test):0.9722
+======
+Train Epoch(273): Acc:0.9319 Prec:0.9319 Recall:0.9319 F1-score:0.9319 Loss:0.20514737639738165
+Test  Epoch(273): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.11249160576287819
+Best Acc(Test):0.9722
+======
+Train Epoch(274): Acc:0.927 Prec:0.927 Recall:0.927 F1-score:0.927 Loss:0.21291832153725884
+Test  Epoch(274): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.13098719885127377
+Best Acc(Test):0.9722
+======
+Train Epoch(275): Acc:0.9183 Prec:0.9183 Recall:0.9183 F1-score:0.9183 Loss:0.23159139849569488
+Test  Epoch(275): Acc:0.9306 Prec:0.9306 Recall:0.9306 F1-score:0.9306 Loss:0.18805179323839105
+Best Acc(Test):0.9722
+======
+Train Epoch(276): Acc:0.9185 Prec:0.9185 Recall:0.9185 F1-score:0.9185 Loss:0.2220636787297933
+Test  Epoch(276): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.1601171803701183
+Best Acc(Test):0.9722
+======
+Train Epoch(277): Acc:0.9289 Prec:0.9289 Recall:0.9289 F1-score:0.9289 Loss:0.1979228624507137
+Test  Epoch(277): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.10604265230991271
+Best Acc(Test):0.9722
+======
+Train Epoch(278): Acc:0.9229 Prec:0.9229 Recall:0.9229 F1-score:0.9229 Loss:0.21857481080552807
+Test  Epoch(278): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.14090160580108996
+Best Acc(Test):0.9722
+======
+Train Epoch(279): Acc:0.9163 Prec:0.9163 Recall:0.9163 F1-score:0.9163 Loss:0.23515506032044473
+Test  Epoch(279): Acc:0.9583 Prec:0.9583 Recall:0.9583 F1-score:0.9583 Loss:0.12523427216903024
+Best Acc(Test):0.9722
+======
+Train Epoch(280): Acc:0.9283 Prec:0.9283 Recall:0.9283 F1-score:0.9283 Loss:0.19652262198860232
+Test  Epoch(280): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.15095630899557602
+Best Acc(Test):0.9722
+======
+Train Epoch(281): Acc:0.9226 Prec:0.9226 Recall:0.9226 F1-score:0.9226 Loss:0.2158139715700046
+Test  Epoch(281): Acc:0.9472 Prec:0.9472 Recall:0.9472 F1-score:0.9472 Loss:0.18381132051834595
+Best Acc(Test):0.9722
+======
+Train Epoch(282): Acc:0.9286 Prec:0.9286 Recall:0.9286 F1-score:0.9286 Loss:0.20319403591363328
+Test  Epoch(282): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.11154678634003452
+Best Acc(Test):0.9722
+======
+Train Epoch(283): Acc:0.9319 Prec:0.9319 Recall:0.9319 F1-score:0.9319 Loss:0.19930745330841645
+Test  Epoch(283): Acc:0.9694 Prec:0.9694 Recall:0.9694 F1-score:0.9694 Loss:0.09808028060133042
+Best Acc(Test):0.9722
+======
+Train Epoch(284): Acc:0.9202 Prec:0.9202 Recall:0.9202 F1-score:0.9202 Loss:0.22157728850193645
+Test  Epoch(284): Acc:0.95 Prec:0.95 Recall:0.95 F1-score:0.95 Loss:0.1322570643387735
+Best Acc(Test):0.9722
+======
+Train Epoch(285): Acc:0.9272 Prec:0.9272 Recall:0.9272 F1-score:0.9272 Loss:0.21598569274596546
+Test  Epoch(285): Acc:0.975 Prec:0.975 Recall:0.975 F1-score:0.975 Loss:0.08994320954155663
+Best Acc(Test):0.975
+======
+Train Epoch(286): Acc:0.9365 Prec:0.9365 Recall:0.9365 F1-score:0.9365 Loss:0.18411245038327964
+Test  Epoch(286): Acc:0.9722 Prec:0.9722 Recall:0.9722 F1-score:0.9722 Loss:0.08042925391751139
+Best Acc(Test):0.975
+======
+Train Epoch(287): Acc:0.9245 Prec:0.9245 Recall:0.9245 F1-score:0.9245 Loss:0.21958793545870678
+Test  Epoch(287): Acc:0.9361 Prec:0.9361 Recall:0.9361 F1-score:0.9361 Loss:0.15782339883077404
+Best Acc(Test):0.975
+======
+Train Epoch(288): Acc:0.9289 Prec:0.9289 Recall:0.9289 F1-score:0.9289 Loss:0.21409622702909553
+Test  Epoch(288): Acc:0.9833 Prec:0.9833 Recall:0.9833 F1-score:0.9833 Loss:0.07527179287179657
+Best Acc(Test):0.9833
+======
+Train Epoch(289): Acc:0.9223 Prec:0.9223 Recall:0.9223 F1-score:0.9223 Loss:0.21725768696354783
+Test  Epoch(289): Acc:0.9639 Prec:0.9639 Recall:0.9639 F1-score:0.9639 Loss:0.11888487183529398
+Best Acc(Test):0.9833
+======
+Train Epoch(290): Acc:0.9319 Prec:0.9319 Recall:0.9319 F1-score:0.9319 Loss:0.21242330278391425
+Test  Epoch(290): Acc:0.9528 Prec:0.9528 Recall:0.9528 F1-score:0.9528 Loss:0.12261931039392948
+Best Acc(Test):0.9833
+======
+Train Epoch(291): Acc:0.9237 Prec:0.9237 Recall:0.9237 F1-score:0.9237 Loss:0.20837688740828764
+Test  Epoch(291): Acc:0.9389 Prec:0.9389 Recall:0.9389 F1-score:0.9389 Loss:0.16225106487779514
+Best Acc(Test):0.9833
+======
+Train Epoch(292): Acc:0.9234 Prec:0.9234 Recall:0.9234 F1-score:0.9234 Loss:0.23355486201851264
+Test  Epoch(292): Acc:0.9778 Prec:0.9778 Recall:0.9778 F1-score:0.9778 Loss:0.08022038144585879
+Best Acc(Test):0.9833
+======
+Train Epoch(293): Acc:0.9313 Prec:0.9313 Recall:0.9313 F1-score:0.9313 Loss:0.2044027640119843
+Test  Epoch(293): Acc:0.9667 Prec:0.9667 Recall:0.9667 F1-score:0.9667 Loss:0.1209487969501187
+Best Acc(Test):0.9833
+======
+Train Epoch(294): Acc:0.9278 Prec:0.9278 Recall:0.9278 F1-score:0.9278 Loss:0.20701199441176393
+Test  Epoch(294): Acc:0.9556 Prec:0.9556 Recall:0.9556 F1-score:0.9556 Loss:0.128152912442127
+Best Acc(Test):0.9833
+======
+Train Epoch(295): Acc:0.9343 Prec:0.9343 Recall:0.9343 F1-score:0.9343 Loss:0.2029161243820968
+Test  Epoch(295): Acc:0.9694 Prec:0.9694 Recall:0.9694 F1-score:0.9694 Loss:0.0851718196645379
+Best Acc(Test):0.9833
+======
+Train Epoch(296): Acc:0.9292 Prec:0.9292 Recall:0.9292 F1-score:0.9292 Loss:0.21049429447106693
+Test  Epoch(296): Acc:0.9806 Prec:0.9806 Recall:0.9806 F1-score:0.9806 Loss:0.08076246143521174
+Best Acc(Test):0.9833
+======
+Train Epoch(297): Acc:0.9332 Prec:0.9332 Recall:0.9332 F1-score:0.9332 Loss:0.19968087893465292
+Test  Epoch(297): Acc:0.8833 Prec:0.8833 Recall:0.8833 F1-score:0.8833 Loss:0.27616508511583443
+Best Acc(Test):0.9833
+======
+Train Epoch(298): Acc:0.9302 Prec:0.9302 Recall:0.9302 F1-score:0.9302 Loss:0.2118015361868817
+Test  Epoch(298): Acc:0.9806 Prec:0.9806 Recall:0.9806 F1-score:0.9806 Loss:0.09206409375790668
+Best Acc(Test):0.9833
+======
+Train Epoch(299): Acc:0.9322 Prec:0.9322 Recall:0.9322 F1-score:0.9322 Loss:0.1921725178056437
+Test  Epoch(299): Acc:0.9667 Prec:0.9667 Recall:0.9667 F1-score:0.9667 Loss:0.10903102418650752
+Best Acc(Test):0.9833
