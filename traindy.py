@@ -95,6 +95,10 @@ def train(opt, device):
     #         del weights_dict[k]
     #     print(model.load_state_dict(weights_dict, strict=False))
 
+
+    total_paramters = sum([np.prod(p.size()) for p in model.parameters()])
+    print('Total network parameters: ' + str(total_paramters / 1e6) + "M")
+
     data_transform = {
         "train": transforms.Compose([
             transforms.RandomResizedCrop(input_size),

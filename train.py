@@ -39,10 +39,10 @@ def main():
     parse.add_argument("--weight", type=str, default="")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
-    parse.add_argument("--train_path", type=str, default="data/train")
-    parse.add_argument("--val_path", type=str, default="data/val")
-    parse.add_argument("--class_num", type=int, default=5)
-    parse.add_argument("--output_path", type=str, default="output/res_epoch300/")
+    parse.add_argument("--train_path", type=str, default="data/train_indoor")
+    parse.add_argument("--val_path", type=str, default="data/val_indoor")
+    parse.add_argument("--class_num", type=int, default=67)
+    parse.add_argument("--output_path", type=str, default="output/nextconv_epoch300/")
 
     opt = parse.parse_args()
 
@@ -66,7 +66,7 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = res(num_classes=class_num).to(device)
+    model = convnext_tiny(num_classes=class_num).to(device)
     if weight != "":
         assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
         weights_dict = torch.load(weight, map_location=device)["model"]
@@ -84,6 +84,10 @@ def train(opt, device):
     #     for k in del_keys:
     #         del weights_dict[k]
     #     print(model.load_state_dict(weights_dict, strict=False))
+
+
+    total_paramters = sum([np.prod(p.size()) for p in model.parameters()])
+    print('Total network parameters: ' + str(total_paramters / 1e6) + "M")
 
     data_transform = {
         "train": transforms.Compose([
