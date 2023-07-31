@@ -216,7 +216,7 @@ def train_epoch(epoch, model, traindata, criterion, optimizer, device, scheduler
         loss.backward()  # 反向求解梯度
         losses += loss.item()
         optimizer.step()  # 更新参数
-        # scheduler.step()  #更新学习率
+        scheduler.step()  #更新学习率
 
         pre_ = torch.argmax(output, 1)
         true.extend(label.tolist())
