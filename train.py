@@ -46,7 +46,7 @@ def main():
 
     opt = parse.parse_args()
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("using {} device.".format(device))
 
     train(opt, device)
@@ -66,7 +66,9 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = convnext_tiny(num_classes=class_num).to(device)
+    model = convnext_tiny(num_classes=class_num)
+    model = nn.DataParallel(model)
+    model.to(device)
     if weight != "":
         assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
         weights_dict = torch.load(weight, map_location=device)["model"]
