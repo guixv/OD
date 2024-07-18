@@ -26,6 +26,7 @@ from modules.swinmodel import swin_base_patch4_window7_224
 from modules.swinTransformer import swin_transformer
 from modules.Res2Net import res2
 from modules.vit_model import vit_base_patch16_224 as create_model
+from modules.mobilenet_v4 import MNV4ConvMedium,MNV4HybridMedium
 import sys
 
 
@@ -39,10 +40,10 @@ def main():
     parse.add_argument("--weight", type=str, default="")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
-    parse.add_argument("--train_path", type=str, default="data/train_indoor")
-    parse.add_argument("--val_path", type=str, default="data/val_indoor")
-    parse.add_argument("--class_num", type=int, default=67)
-    parse.add_argument("--output_path", type=str, default="output/nextconv_epoch300/")
+    parse.add_argument("--train_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/train")
+    parse.add_argument("--val_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/val")
+    parse.add_argument("--class_num", type=int, default=1000)
+    parse.add_argument("--output_path", type=str, default="output/MNV4_conv/")
 
     opt = parse.parse_args()
 
@@ -66,12 +67,12 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = convnext_tiny(num_classes=class_num)
+    model = MNV4ConvMedium(num_classes=class_num)
     model = nn.DataParallel(model)
     model.to(device)
     if weight != "":
         assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
-        weights_dict = torch.load(weight, map_location=device)["model"]
+        weights_dict = torch.load(weight, map_location=device)
         # 删除有关分类类别的权重
         for k in list(weights_dict.keys()):
             if "head" in k:
