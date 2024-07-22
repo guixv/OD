@@ -110,9 +110,9 @@ def train(opt, device):
     test_data = torchvision.datasets.ImageFolder(root=test_path, transform=data_transform["test"])
 
     traindata = DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True,
-                           num_workers=0)  # 将训练数据以每次n张图片的形式抽出进行训练
+                           num_workers=8)  # 将训练数据以每次n张图片的形式抽出进行训练
     testdata = DataLoader(dataset=test_data, batch_size=batch_size // 2, shuffle=True,
-                          num_workers=0)  # 将训练数据以每次n张图片的形式抽出进行测试
+                          num_workers=8)  # 将训练数据以每次n张图片的形式抽出进行测试
 
     train_size = len(train_data)  # 训练集的长度
     test_size = len(test_data)  # 测试集的长度
