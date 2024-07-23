@@ -6,6 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
+from torch.optim.lr_scheduler import CosineAnnealingLR
 from matplotlib import pyplot as plt
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
@@ -25,25 +26,27 @@ from modules.ViT import vit16
 from modules.swinmodel import swin_base_patch4_window7_224
 from modules.swinTransformer import swin_transformer
 from modules.Res2Net import res2
-from modules.vit_model import vit_base_patch16_224 as create_model
+from modules.vit_model import vit_base_patch16_224 
 from modules.mobilenet_v4 import MNV4ConvMedium,MNV4HybridMedium
+from modules.pvtv2 import pvt_v2_b3
 import sys
 
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=32)
+    parse.add_argument("--batch_size", type=int, default=128)
     parse.add_argument("--lr", type=int, default=0.001)
-    parse.add_argument("--lrf", type=int, default=0.01)
+    parse.add_argument("--lrf", type=int, default=0.0001)
     parse.add_argument("--input_size", type=int, default=224)
     parse.add_argument("--epoch", type=int, default=300)
-    parse.add_argument("--weight", type=str, default="")
+    parse.add_argument("--weight", type=str, default="./pvt_v2_b3.pth")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/train")
     parse.add_argument("--val_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/val")
     parse.add_argument("--class_num", type=int, default=1000)
-    parse.add_argument("--output_path", type=str, default="output/MNV4_conv/")
+    parse.add_argument("--output_path", type=str, default="output/pvt_pre/")
+    parse.add_argument("--num_gpu", type=int, default=1)
 
     opt = parse.parse_args()
 
@@ -67,17 +70,38 @@ def train(opt, device):
     lrf = opt.lrf
     class_num = opt.class_num
 
-    model = MNV4ConvMedium(num_classes=class_num)
+    model = pvt_v2_b3(num_classes=class_num)
     model = nn.DataParallel(model)
     model.to(device)
     if weight != "":
         assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
         weights_dict = torch.load(weight, map_location=device)
+
+        # #多卡转单卡
+        # from collections import OrderedDict
+        # new_state_dict = OrderedDict()
+        # for k, v in weights_dict.items():
+        #     name = k[7:] # 去掉 `module.`
+        #     new_state_dict[name] = v
+        # # 加载参数
+        # print(model.load_state_dict(new_state_dict))
         # 删除有关分类类别的权重
-        for k in list(weights_dict.keys()):
-            if "head" in k:
-                del weights_dict[k]
-        print(model.load_state_dict(weights_dict, strict=False))
+        # for k in list(weights_dict.keys()):
+        #     if "head" in k:
+        #         del weights_dict[k]
+
+        #单卡转多卡
+        from collections import OrderedDict
+        new_state_dict = OrderedDict()
+        for k, v in weights_dict.items():
+            name = 'module.'+k # 去掉 `module.`
+            new_state_dict[name] = v
+        # 加载参数
+        print(model.load_state_dict(new_state_dict))
+
+        #单卡
+        # print(model.load_state_dict(weights_dict, strict=False))
+
     # if weight != "":
     #     assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
     #     weights_dict = torch.load(weight, map_location=device)
@@ -121,13 +145,19 @@ def train(opt, device):
 
     criterion = nn.CrossEntropyLoss().to(device)
     # optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)  # 优化器
-    optimizer = optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.9999))
+    # optimizer = optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.9999))
 
-    lf = lambda x: ((1 + math.cos(x * math.pi / (epoch + 1))) / 2) * (1 - lrf) + lrf  # cosine
-    scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  # 学习率变化
+    # lf = lambda x: ((1 + math.cos(x * math.pi / (epoch + 1))) / 2) * (1 - lrf) + lrf  # cosine
+    # scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  # 学习率变化
+
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.999), weight_decay=lrf)
+    scheduler = CosineAnnealingLR(optimizer=optimizer,
+                                     T_max=epoch * train_size // batch_size // opt.num_gpu)
+
 
     output_path = opt.output_path
     if os.path.exists(output_path) is True:
+        print(output_path)
         inputting = input("路径已经存在，是否要覆盖并继续Y:")
         if inputting != "Y":
             return -1
