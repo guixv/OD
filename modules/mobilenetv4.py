@@ -9,7 +9,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Tuple, Union
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
+from torchvision.ops.stochastic_depth import StochasticDepth
 from mmseg.registry import MODELS
 
 #!/usr/bin/python
@@ -461,7 +461,7 @@ class InvertedResidual(nn.Module):
 
 class UniversalInvertedBottleneckBlock(nn.Module):
     def __init__(self, in_channels, out_channels, start_dw_kernel_size, middle_dw_kernel_size, middle_dw_downsample,
-                 stride, expand_ratio):
+                 stride, expand_ratio,stochastic_depth_rate=0.075):
         """An inverted bottleneck block with optional depthwises.
         Referenced from here https://github.com/tensorflow/models/blob/master/official/vision/modeling/layers/nn_blocks.py
         [192, 192, 3, 3, True, 1, 4],
@@ -469,6 +469,8 @@ class UniversalInvertedBottleneckBlock(nn.Module):
         super(UniversalInvertedBottleneckBlock, self).__init__()
         # starting depthwise conv
         self.start_dw_kernel_size = start_dw_kernel_size
+        if self.start_dw_kernel_size:
+            self._stochastic_depth = StochasticDepth(p=stochastic_depth_rate,mode='row')
         if self.start_dw_kernel_size:
             stride_ = stride if not middle_dw_downsample else 1
             self._start_dw_ = conv2d(in_channels, in_channels, kernel_size=start_dw_kernel_size, stride=stride_, groups=in_channels, act=False)
@@ -482,12 +484,14 @@ class UniversalInvertedBottleneckBlock(nn.Module):
             self._middle_dw = conv2d(expand_filters, expand_filters, kernel_size=middle_dw_kernel_size, stride=stride_, groups=expand_filters)
         # projection with 1x1 convs
         self._proj_conv = conv2d(expand_filters, out_channels, kernel_size=1, stride=1, act=False)
+        self.identity = stride == 1 and in_channels == out_channels
 
         # expand depthwise conv (not used)
         # _end_dw_kernel_size = 0
         # self._end_dw = conv2d(out_channels, out_channels, kernel_size=_end_dw_kernel_size, stride=stride, groups=in_channels, act=False)
 
     def forward(self, x):
+        shortcut = x
         if self.start_dw_kernel_size:
             x = self._start_dw_(x)
             # print("_start_dw_", x.shape)
@@ -497,6 +501,10 @@ class UniversalInvertedBottleneckBlock(nn.Module):
             x = self._middle_dw(x)
             # print("_middle_dw", x.shape)
         x = self._proj_conv(x)
+        if self.start_dw_kernel_size:
+            self._stochastic_depth(x)
+        if self.identity:
+            x = x + shortcut
         # print("_proj_conv", x.shape)
         return x
 
@@ -755,7 +763,7 @@ def MNV4HybridMedium(model_name="MNV4HybridMedium",num_classes: int = 1000):
 # MNV4ConvSmall, MNV4ConvMedium, MNV4ConvLarge, MNV4HybridMedium, MNV4HybridLarge
 if __name__ == '__main__':
     x = torch.rand((1, 3, 360, 640))
-    model = create_mobilenetv4(model_name="MNV4HybridMedium")
+    model = create_mobilenetv4(model_name="MNV4ConvMedium")
     out = model(x)
     print("logit: ", out.size())
     # for index, feat in enumerate(feats):
