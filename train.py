@@ -6,12 +6,14 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
-from torch.optim.lr_scheduler import CosineAnnealingLR
+from utils.coslrwarmup import CosineAnnealingWarmupRestarts
 from matplotlib import pyplot as plt
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 import torch.optim.lr_scheduler as lr_scheduler
 from tqdm import tqdm
+from utils.Rand_Augment import RandAugmentMC
+from utils.cutout import Cutout
 
 from utils.utils import Evaluation
 import argparse
@@ -34,19 +36,23 @@ import sys
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=128)
-    parse.add_argument("--lr", type=int, default=0.001)
+    parse.add_argument("--batch_size", type=int, default=512)
+    parse.add_argument("--lr", type=int, default=0.004)
     parse.add_argument("--lrf", type=int, default=0.0001)
+    parse.add_argument("--weight_decay", type=int, default=0.1)
     parse.add_argument("--input_size", type=int, default=224)
-    parse.add_argument("--epoch", type=int, default=300)
-    parse.add_argument("--weight", type=str, default="./pvt_v2_b3.pth")
+    parse.add_argument("--warm_step", type=int, default=5)
+    parse.add_argument("--epoch", type=int, default=500)
+    parse.add_argument("--continue_epoch", type=int, default=-1)
+    parse.add_argument("--weight", type=str, default="/data/work_folder/qiuchaoyi/code/classification-main/output/MNV4_conv/last.pth")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/train")
     parse.add_argument("--val_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/val")
     parse.add_argument("--class_num", type=int, default=1000)
-    parse.add_argument("--output_path", type=str, default="output/pvt_pre/")
+    parse.add_argument("--output_path", type=str, default="output/MNV4_conv_continue/")
     parse.add_argument("--num_gpu", type=int, default=1)
+    
 
     opt = parse.parse_args()
 
@@ -62,15 +68,19 @@ def train(opt, device):
     print("start training\n")
     batch_size = opt.batch_size
     lr = opt.lr
+    lrf = opt.lrf
     input_size = opt.input_size
     epoch = opt.epoch
     train_path = opt.train_path
     test_path = opt.val_path
     weight = opt.weight
-    lrf = opt.lrf
+    weight_decay = opt.weight_decay
     class_num = opt.class_num
+    continue_epoch = opt.continue_epoch
+    warm_step = opt.warm_step
 
-    model = pvt_v2_b3(num_classes=class_num)
+    ###################################################################################################
+    model = MNV4ConvMedium(num_classes=class_num)
     model = nn.DataParallel(model)
     model.to(device)
     if weight != "":
@@ -91,16 +101,17 @@ def train(opt, device):
         #         del weights_dict[k]
 
         #单卡转多卡
-        from collections import OrderedDict
-        new_state_dict = OrderedDict()
-        for k, v in weights_dict.items():
-            name = 'module.'+k # 去掉 `module.`
-            new_state_dict[name] = v
-        # 加载参数
-        print(model.load_state_dict(new_state_dict))
+        # from collections import OrderedDict
+        # new_state_dict = OrderedDict()
+        # for k, v in weights_dict.items():
+        #     name = 'module.'+k # 去掉 `module.`
+        #     new_state_dict[name] = v
+        # # 加载参数
+        # print(model.load_state_dict(new_state_dict))
 
-        #单卡
-        # print(model.load_state_dict(weights_dict, strict=False))
+        #正常
+        print(model.load_state_dict(weights_dict, strict=False))
+    ###################################################################################################
 
     # if weight != "":
     #     assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
@@ -119,7 +130,12 @@ def train(opt, device):
     data_transform = {
         "train": transforms.Compose([
             transforms.RandomResizedCrop(input_size),
-            transforms.RandomHorizontalFlip(),
+            # transforms.RandomHorizontalFlip(),
+            # transforms.RandomRotation(10),
+            # transforms.GaussianBlur(kernel_size=(5,5),sigma=(0.1, 3.0)),
+            # transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
+            RandAugmentMC(n=2,m=15,aug_type='all'),
+            Cutout(),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
@@ -143,16 +159,21 @@ def train(opt, device):
 
     print("using {} images for training, {} images for validation.".format(train_size, test_size))  # 用于打印总的训练集数量和验证集数量
 
+    from utils.trainloss import LabelSmoothingLoss
+    criterion = LabelSmoothingLoss(class_num=class_num,smoothing=0.1)
     criterion = nn.CrossEntropyLoss().to(device)
     # optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)  # 优化器
-    # optimizer = optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.9999))
+    optimizer = optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.9999), weight_decay=weight_decay,eps=1e-7)
 
-    # lf = lambda x: ((1 + math.cos(x * math.pi / (epoch + 1))) / 2) * (1 - lrf) + lrf  # cosine
-    # scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  # 学习率变化
+    lf = lambda x: ((1 + math.cos(x * math.pi / (epoch + 1))) / 2) * (1 - lrf) + lrf  # cosine
+    scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)  # 学习率变化
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.999), weight_decay=lrf)
-    scheduler = CosineAnnealingLR(optimizer=optimizer,
-                                     T_max=epoch * train_size // batch_size // opt.num_gpu)
+    # optimizer = torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.999), weight_decay=weight_decay,eps=1e-7)
+    # scheduler = CosineAnnealingWarmupRestarts(optimizer=optimizer,
+    #                                  first_cycle_steps=epoch * train_size // batch_size // opt.num_gpu,
+    #                                  min_lr=lrf,
+    #                                  last_epoch=continue_epoch,
+    #                                  warmup_steps=warm_step)
 
 
     output_path = opt.output_path
