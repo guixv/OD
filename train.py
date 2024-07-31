@@ -19,6 +19,7 @@ from utils.utils import Evaluation
 import argparse
 import numpy as np
 import os
+from safetensors.torch import load_model, save_model
 
 from modules.convnext import convnext_tiny
 from modules.VGG import vgg
@@ -30,27 +31,28 @@ from modules.swinTransformer import swin_transformer
 from modules.Res2Net import res2
 from modules.vit_model import vit_base_patch16_224 
 from modules.mobilenet_v4 import MNV4ConvMedium,MNV4HybridMedium
+from modules.timm_MNV4 import mobilenetv4_conv_medium,mobilenetv4_conv_blur_medium
 from modules.pvtv2 import pvt_v2_b3
 import sys
 
 
 def main():
     parse = argparse.ArgumentParser(description="classification")
-    parse.add_argument("--batch_size", type=int, default=512)
-    parse.add_argument("--lr", type=int, default=0.004)
-    parse.add_argument("--lrf", type=int, default=0.0001)
+    parse.add_argument("--batch_size", type=int, default=256)
+    parse.add_argument("--lr", type=int, default=0)
+    parse.add_argument("--lrf", type=int, default=0)
     parse.add_argument("--weight_decay", type=int, default=0.1)
     parse.add_argument("--input_size", type=int, default=224)
     parse.add_argument("--warm_step", type=int, default=5)
     parse.add_argument("--epoch", type=int, default=500)
     parse.add_argument("--continue_epoch", type=int, default=-1)
-    parse.add_argument("--weight", type=str, default="/data/work_folder/qiuchaoyi/code/classification-main/output/MNV4_conv/last.pth")
+    parse.add_argument("--weight", type=str, default="./output/MNV4_conv_continue/best.pth")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/train")
     parse.add_argument("--val_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/val")
     parse.add_argument("--class_num", type=int, default=1000)
-    parse.add_argument("--output_path", type=str, default="output/MNV4_conv_continue/")
+    parse.add_argument("--output_path", type=str, default="output/MNV4_conv/")
     parse.add_argument("--num_gpu", type=int, default=1)
     
 
@@ -80,10 +82,16 @@ def train(opt, device):
     warm_step = opt.warm_step
 
     ###################################################################################################
-    model = MNV4ConvMedium(num_classes=class_num)
-    model = nn.DataParallel(model)
+    model = mobilenetv4_conv_blur_medium(num_classes=class_num,pretrained = False)
+    # model = mobilenetv4_conv_medium(num_classes=class_num,features_only = True)
+    # model = nn.DataParallel(model)
     model.to(device)
     if weight != "":
+        ###################safetensor
+        # load_model(model, weight)
+
+
+        ###################pth
         assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
         weights_dict = torch.load(weight, map_location=device)
 
@@ -130,12 +138,11 @@ def train(opt, device):
     data_transform = {
         "train": transforms.Compose([
             transforms.RandomResizedCrop(input_size),
-            # transforms.RandomHorizontalFlip(),
-            # transforms.RandomRotation(10),
-            # transforms.GaussianBlur(kernel_size=(5,5),sigma=(0.1, 3.0)),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomRotation(10),
+            transforms.GaussianBlur(kernel_size=(5,5),sigma=(0.1, 3.0)),
             # transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
             RandAugmentMC(n=2,m=15,aug_type='all'),
-            Cutout(),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
