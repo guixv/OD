@@ -12,6 +12,8 @@ from torch.utils.data import DataLoader
 import torch.optim.lr_scheduler as lr_scheduler
 from tqdm import tqdm
 
+from safetensors.torch import load_model, save_model
+
 from utils.utils import Evaluation
 import argparse
 import numpy as np
@@ -27,6 +29,7 @@ from modules.swinTransformer import swin_transformer
 from modules.Res2Net import res2
 from modules.vit_model import vit_base_patch16_224 
 from modules.mobilenet_v4 import MNV4ConvMedium,MNV4HybridMedium
+from modules.timm_MNV4 import mobilenetv4_conv_medium,mobilenetv4_conv_blur_medium
 from modules.pvtv2 import pvt_v2_b3
 import sys
 
@@ -36,15 +39,14 @@ def main():
     parse.add_argument("--batch_size", type=int, default=128)
     parse.add_argument("--lr", type=int, default=0.001)
     parse.add_argument("--lrf", type=int, default=0.0001)
-    parse.add_argument("--input_size", type=int, default=224)
-    parse.add_argument("--epoch", type=int, default=300)
-    parse.add_argument("--weight", type=str, default="./pvt_v2_b3.pth")
+    parse.add_argument("--input_size", type=int, default=256)
+    parse.add_argument("--weight", type=str, default="./output/MNV4_blur.safetensors")
     # parse.add_argument("--log_eval", type=str, default="output/ViT/log_val.txt")
     # parse.add_argument("--log_list", type=str, default="output/ViT/log_list.txt")
     parse.add_argument("--train_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/train")
     parse.add_argument("--val_path", type=str, default="/data/work_folder/data/train_data/ILSVRC2012/val")
     parse.add_argument("--class_num", type=int, default=1000)
-    parse.add_argument("--output_path", type=str, default="output/pvt_pre/")
+    parse.add_argument("--output_path", type=str, default="output/safe/")
 
     opt = parse.parse_args()
 
@@ -78,37 +80,45 @@ def test(opt, device):
         ])}
 
     
-
-    model = pvt_v2_b3(num_classes=class_num)
-    model = nn.DataParallel(model)
+    model = mobilenetv4_conv_blur_medium(num_classes=1000, features_only=False,pretrained= False)
+    # model = MNV4ConvMedium(num_classes=class_num)
+    # model = nn.DataParallel(model)
     model.to(device)
     test_path = opt.val_path
     
     if weight != "":
-        assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
-        weights_dict = torch.load(weight, map_location=device)
+        ###################safetensor
+        load_model(model, weight)
 
-        # #多卡转单卡
-        # from collections import OrderedDict
-        # new_state_dict = OrderedDict()
-        # for k, v in weights_dict.items():
-        #     name = k[7:] # 去掉 `module.`
-        #     new_state_dict[name] = v
-        # # 加载参数
-        # print(model.load_state_dict(new_state_dict))
-        # 删除有关分类类别的权重
-        # for k in list(weights_dict.keys()):
-        #     if "head" in k:
-        #         del weights_dict[k]
 
-        #单卡转多卡
-        from collections import OrderedDict
-        new_state_dict = OrderedDict()
-        for k, v in weights_dict.items():
-            name = 'module.'+k # 去掉 `module.`
-            new_state_dict[name] = v
-        # 加载参数
-        print(model.load_state_dict(new_state_dict))
+        ###################pth
+        # assert os.path.exists(weight), "weights file: '{}' not exist.".format(weight)
+        # weights_dict = torch.load(weight, map_location=device)
+
+        # # #多卡转单卡
+        # # from collections import OrderedDict
+        # # new_state_dict = OrderedDict()
+        # # for k, v in weights_dict.items():
+        # #     name = k[7:] # 去掉 `module.`
+        # #     new_state_dict[name] = v
+        # # # 加载参数
+        # # print(model.load_state_dict(new_state_dict))
+        # # 删除有关分类类别的权重
+        # # for k in list(weights_dict.keys()):
+        # #     if "head" in k:
+        # #         del weights_dict[k]
+
+        # #单卡转多卡
+        # # from collections import OrderedDict
+        # # new_state_dict = OrderedDict()
+        # # for k, v in weights_dict.items():
+        # #     name = 'module.'+k # 去掉 `module.`
+        # #     new_state_dict[name] = v
+        # # # 加载参数
+        # # print(model.load_state_dict(new_state_dict))
+
+        # #正常
+        # print(model.load_state_dict(weights_dict, strict=False))
 
     test_data = torchvision.datasets.ImageFolder(root=test_path, transform=data_transform["test"])
     testdata = DataLoader(dataset=test_data, batch_size=batch_size // 2, shuffle=True,
